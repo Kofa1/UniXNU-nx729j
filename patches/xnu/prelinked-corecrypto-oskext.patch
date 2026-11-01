@@ -1,0 +1,25 @@
+diff --git a/libkern/c++/OSKext.cpp b/libkern/c++/OSKext.cpp
+--- a/libkern/c++/OSKext.cpp
++++ b/libkern/c++/OSKext.cpp
+@@ -81,10 +81,5 @@
+ #if CONFIG_MACF
+ extern "C" int mac_late;
+ #endif
+-#if defined(XNU_SOURCE_CORECRYPTO14)
+-extern "C" kmod_info_t *source_corecrypto14_original(void);
+-extern "C" kern_return_t source_corecrypto14_start_once(kmod_info_t *module, void *data);
+-#endif
+ 
+ #include <IOKit/IOLib.h>
+ #include <IOKit/IOCatalogue.h>
+@@ -8484,10 +8479,4 @@ OSKext::start(bool startDependenciesFlag)
+ 	result = OSRuntimeInitializeCPP(this);
+ 	if (result == KERN_SUCCESS) {
+-#if defined(XNU_SOURCE_CORECRYPTO14)
+-		if (kmod_info == source_corecrypto14_original()) {
+-			/* The kernel already started the original corecrypto; share that one result. */
+-			result = source_corecrypto14_start_once(kmod_info, kmodStartData);
+-		} else
+-#endif
+ 		result = startfunc(kmod_info, kmodStartData);
+ 	}

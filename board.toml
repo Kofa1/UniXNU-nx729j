@@ -29,6 +29,7 @@ archives = [
   "build-libpthread-kernel.py",
   "component:ShengUfs",
   "build-sheng-source-storage.py --policy-dir scripts/policies/ipados-27.0.1-24A446",
+  "build-nx729j-source-storage-fallbacks.py",
   "component:RamBlock",
 ]
 
