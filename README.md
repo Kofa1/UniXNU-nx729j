@@ -1,74 +1,47 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/logo-light.svg">
-    <img alt="UniXNU" src="assets/logo-light.svg" width="200">
-  </picture>
-</p>
+# RedMagic 8 Pro (NX729J) iPadOS port
 
-<p align="center">
-  <a href="https://unixnu.com"><img alt="Documentation" src="https://img.shields.io/badge/docs-unixnu.com-2A5BD7?logo=readthedocs&logoColor=white"></a>
-  <a href="https://t.me/unixnu"><img alt="Telegram" src="https://img.shields.io/badge/Telegram-@unixnu-26A5E4?logo=telegram&logoColor=white"></a>
-  <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=Pubz23DOCY76nxjlGuSms2zesk4jRvas4zrXJRYk7omf7CprXbGQigLEI%2BCoYR8D&busi_data=eyJncm91cENvZGUiOiIxMTI2MTE2NzU5IiwidG9rZW4iOiJwSHJsUDN1UnN2Vi8yM210TjJRbzBIcERmcUpyOS9lb0hHVVpadWdvVFdScVpSYUFLT1YzTk5TWC9mN2xWYmtIIiwidWluIjoiMzE1MTEwOTc0MSJ9&data=_cJgr-jX9yJ2-GXwVjRN5FOhDyk5B-HAfIk5LSunbW_XkkmKqNXbpH33wzP93J0p9DI1fbjgBUrUfTVhwDcxjg&svctype=4&tempid=h5_group_info"><img alt="QQ Group" src="https://img.shields.io/badge/QQ%20Group-join-12B7F5?logo=qq&logoColor=white"></a>
-  <a href="https://x.com/unixnu"><img alt="X" src="https://img.shields.io/badge/X-@unixnu-000000?logo=x&logoColor=white"></a>
-</p>
+Active target: iPadOS 27.0.1 (24A446), arm64e, XNU 12377.121.6.
 
-# UniXNU-sheng
+This branch migrates NX729J configuration to UniXNU format 2 and wires the
+27 source-storage/root-policy path from the pinned Sheng implementation. It
+uses the NX729J SM8550 tree, 4 KiB UFS geometry, 16 GiB memory map, and its
+UEFI package integration. Display, touch, Adreno, and 120 Hz are not enabled
+in this first root candidate.
 
-Device repository for the Xiaomi Pad 6S Pro (sheng, SM8550). It holds the board file, kernel defconfig, device scripts, drivers and package.
+## Current evidence
 
-🎉 **News:** The native Metal GPU driver is fully working on sheng. The render server composites the system UI through the Adreno 740, and listed processes get their own Metal devices.
+- The format 2 NX729J 27 configuration resolves and assembles a separate build tree.
+- The official package preflight resolves all 70 pinned 27 kernel patches.
+- The UEFI integration patch applies to uefi-sheng commit
+  `20ac23d5e0937106c2129303dfc931b3390ae660`.
+- The pinned NX729J firmware DTS compiles to an 848,678-byte DTB; its SHA-256 is
+  `7541fab760d9f466d7565fc7ac0d3c30c52dec8c284ed9b72c12208b6f84376d`.
+- The 27 signed OS and SystemOS policy headers match the pinned profile and share
+  the same trust anchor.
 
-- [Documentation](https://unixnu.com)
-- [Device page](https://unixnu.com/devices/sheng)
-- [Porting guide](https://unixnu.com/porting/)
-- [Build](https://unixnu.com/building)
-
-Firmware: [uefi-sheng](https://github.com/UniXNU/uefi-sheng).
-
-Build with the `unixnu` driver of [UniXNU](https://github.com/UniXNU/UniXNU). Clone both repositories with `--recurse-submodules`; `unixnu fetch` also updates the module submodules.
+These checks do not show a kernel build, root mount, `launchd`, PAC on the
+phone, or a boot image. BOOTB-20 through BOOTB-23 remain iOS 17 no-root
+diagnostics; retain them as references and do not repeat them.
 
 ## Build
 
-Run these commands from the UniXNU checkout. The device repository is `../UniXNU-sheng`.
+The packaged root path uses Apple's public IOStorageFamily sources and Xcode,
+so run the package workflow on macOS:
 
-```sh
-./unixnu defconfig sheng_defconfig -D ../UniXNU-sheng
-./unixnu fetch
-./unixnu ipsw fetch
-./unixnu build kernel
-./unixnu build package
-./unixnu build firmware --uefi ../uefi-sheng
-./unixnu build payload --unique-chip-id <hex> --trust-cache <bundle> --data-ramdisk <seed>
-./unixnu bootimg --uefi ../uefi-sheng --dtb <sheng.dtb>
-```
+1. Add the stable 8-hex-digit software identity seed as the repository secret
+   `UNIXNU_UNIQUE_CHIP_ID`.
+2. In GitHub, open Actions > package > Run workflow on this branch with OS profile 27.
+3. Keep the generated boot image, payload, kernel, and manifest together. The
+   workflow retains its artifacts for one day.
 
-The [device page](https://unixnu.com/devices/sheng#build) adds the userdata image and the Data seed growth commands. The platform seed, trust cache and Data seed are device inputs. Use `--owner-trust-cache <bundle>` for an owner-signed bundle.
+For a local macOS checkout, follow UniXNU's [building guide](https://unixnu.com/building)
+and [NX729J porting record](PORTING-NX729J.md). Run
+`scripts/package.sh --check --no-deps --os 27` before a package build.
 
-Without a Mac, run the kernel and userdata steps in the [macOS runner workflow](https://github.com/UniXNU/UniXNU/actions/workflows/macos.yml). The [build guide](https://unixnu.com/building#macos-runner) lists its inputs.
+## Next device milestone
 
-## Device support
-
-The original iPadOS userland runs from the IPSW; the home screen and Settings are reached. This table records user-facing device support.
-
-| Feature | State | Notes |
-| --- | --- | --- |
-| Touch | ✅ | Novatek NT36532E |
-| Display | ✅ | |
-| UFS | ✅ | Native UFS root |
-| Wi-Fi | ❌ | |
-| Bluetooth | ❌ | |
-| Camera | ❌ | |
-| GPU | ✅ | Native Metal, GPU compositing, per-process devices and exported pipeline caches |
-| USB | ❌ | |
-| Audio | ❌ | |
-| Sensors | ❌ | |
-| Battery driver | ❌ | |
-| MiPPS | ❌ | |
-| Suspend and resume | ❌ | |
-
-✅ available, ⚠️ partial, ❌ not available. The GPU details are in the [Adreno 740 driver](https://unixnu.com/drivers/native-adreno) page.
-
-## License
-
-BSD-2-Clause-Patent. See [LICENSE](LICENSE).
+After a concrete package exists, boot that exact image once and report whether
+the kernel publishes OS/SystemOS, mounts the configured root, and starts
+`launchd`. Do not flash a userdata image until its layout and recovery route
+have been reviewed. Then bring up display/touch at 60 Hz, followed by Adreno
+rendering and measured 120 Hz presentation.

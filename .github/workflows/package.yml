@@ -1,0 +1,71 @@
+name: package
+
+# Manual one-device package run. Artifacts include the NX729J platform seed;
+# download them and delete the run after use.
+on:
+  push:
+    branches:
+      - codex/ios27-interactive-port
+  workflow_dispatch:
+    inputs:
+      os:
+        description: "OS profile"
+        type: choice
+        options: ["27"]
+        default: "27"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: package-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    runs-on: macos-26
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: device
+          submodules: recursive
+      - uses: actions/checkout@v4
+        with:
+          repository: UniXNU/UniXNU
+          ref: 627c932a1573483dd44c29b48a113c3761dd8f55
+          path: UniXNU
+          submodules: recursive
+      - uses: actions/checkout@v4
+        with:
+          repository: UniXNU/uefi-sheng
+          ref: 20ac23d5e0937106c2129303dfc931b3390ae660
+          path: uefi-sheng
+          submodules: recursive
+      - name: tools
+        run: brew install dtc llvm
+      - name: platform seed
+        env:
+          seed: ${{ secrets.UNIXNU_UNIQUE_CHIP_ID }}
+        run: |
+          if ! [[ "$seed" =~ ^[0-9a-fA-F]{8}$ ]]; then
+            echo 'Set the repository secret UNIXNU_UNIQUE_CHIP_ID to the device seed (8 hex digits).' >&2
+            exit 1
+          fi
+      - name: package
+        working-directory: device
+        env:
+          UNIXNU_UNIQUE_CHIP_ID: ${{ secrets.UNIXNU_UNIQUE_CHIP_ID }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: scripts/package.sh --os 27 --uefi ../uefi-sheng
+      - name: images
+        uses: actions/upload-artifact@v4
+        with:
+          name: images-ipados27
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            UniXNU/out/nx729j/*/*/boot/boot.img
+            UniXNU/out/nx729j/*/*/payload/payload.img
+            UniXNU/out/nx729j/*/*/kernel/kernel.macho
+            UniXNU/out/nx729j/*/*/package.manifest.json

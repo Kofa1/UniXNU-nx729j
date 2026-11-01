@@ -1,214 +1,48 @@
-# Board description of the Nubia RedMagic 8 Pro / 8 Pro+ (nx729j, SM8550).
-#
-# Values marked [DTB] are read from Resources/DTBs/nx729j.dts in UniXNU/uefi-sheng,
-# which is the device tree the stock ABL hands to the payload on this phone.
-# Values marked [TODO] cannot be derived from any public source and must be
-# measured on the device; scripts/collect-nx729j.py fills them in.
+schema_version = 2
 
 [board]
 name = "nx729j"
 soc = "SM8550"
 description = "Nubia RedMagic 8 Pro / 8 Pro+"
-kit = "nx729j"                     # package/ of this repository appears as kits/nx729j in the build tree
+kit = "nx729j"
+soc_source = "sm8550"
+os_profile = "ipados-27.0.1-24A446"
 
-# Same target image as sheng: the unchanged iPad7,1 iPadOS 17.7.11 restore image.
-# Nothing here is device specific except where the kernel runs; the IPSW identity is
-# what makes the original userland bootable, so keep product/build/board_id in sync.
-[ipsw]
-url = "https://updates.cdn-apple.com/2025SpringFCS/fullrestores/122-77166/DCA6CFE8-90E9-4B92-880D-3DE171798E40/iPad_Pro_HFR_17.7.11_21H461_Restore.ipsw"
-product = "iPad7,1"
-version = "17.7.11"
-build = "21H461"
-device_class = "j120ap"
-chip_id = 0x8011
-board_id = 12
-fetch = ["KernelCache", "DeviceTree", "StaticTrustCache", "Cryptex1,SystemTrustCache"]
-
-[ipsw.sha256]
-"044-76040-038.dmg" = "3f99b859c9728379110b66657c7b15285bcb1925ad8b5726542e2cdcf8b1028d"
-"044-76034-038.dmg" = "b4908cde41d23e6bc05e6af51a2c9eeb00cf0f863a6a18b1600c96a3fd70414f"
-
-# The raw image written to the phone's userdata partition.
-#
-# [FW] first_lba is read out of the stock fastboot package for this exact model:
-#   * gpt_main0.bin, partition entry 11 (label "userdata"), first_lba = 2712360
-#   * rawprogram0.xml, <program label="userdata" start_sector="2712360">
-#   * patch0.xml, "Update last partition 12 'userdata' with actual size in Primary
-#     Header" -> last_lba = NUM_DISK_SECTORS-6
-# Both files agree, and the partition is 4096-byte addressed, hence lba_bytes = 4096
-# (the stock UFS LUN 0 is formatted with 4 KiB logical blocks, not 512).
-#
-# first_lba is therefore exact and device independent.
-#
-# [MEASURE] last_lba still has to come from the phone, because QUALCOMM packages
-# describe "userdata" as "the rest of the disk" (num_partition_sectors="0") and do
-# not record the disk size. The value is only used to check that the built image
-# fits (scripts/unixnu/userdata.py: capacity = (last-first+1)*lba_bytes), so an
-# unset value fails the preflight instead of writing anything wrong.
-#
-# [DEVICE] 2026-10-23, measured twice and they agree:
-#   * fastboot getvar partition-size:userdata = 0x718BCD3000 = 487676784640 B
-#     = 119061715 * 4096, i.e. the entry spans 119061715 sectors;
-#   * the phone's own GPT, read by the driver (native-ufs-probe=10):
-#     userdata first=0x296328 last=0x7421FFA, which is exactly
-#     0x296328 + 119061715 - 1.
-# An earlier value, 0x718bccd, was the sector *count* minus 6 used as if it were a
-# last LBA; it understated the partition by 14 GB. The GPT number above is the truth.
 [userdata]
-first_lba = 0x296328              # 2712360, 4 KiB sectors  [FW]
-last_lba = 0x7421ffa              # [DEVICE] GPT entry + fastboot partition-size
+first_lba = 2712360
+last_lba = 121774074
 lba_bytes = 4096
-# Bring-up order: mount the root volume first, which is the "OS" window. The
-# "SystemOS" cryptex window is added back when userland needs it (stage 7); it is
-# left out here because the two IPSW disk images plus the assembled image do not
-# fit next to each other in the macOS runner's 14 GB of scratch space.
-#
-# [ONE WINDOW PER RUN] The comment above is why this list holds a single entry at
-# a time: the runner cannot stage both IPSW disk images and the assembled image at
-# once. Set the window that this run should extract; the images are joined
-# off-runner. `ufsBuildRootPlan()` refuses to build a root plan unless the SHNGROOT
-# manifest carries both "OS" and "SystemOS", so the finished image always has both.
 windows = [
   { name = "OS", component = "OS" },
+  { name = "SystemOS", component = "Cryptex1,SystemOS", optional = true },
 ]
 
 [kernel]
-defconfig = "nx729j_defconfig"
-# The archive builders come from the sheng kit, which this repository is forked from.
-# The SM8550 platform code (GIC, timer, PMGR/RPMh, UFS, DPU, GMU) is SoC level and is
-# reused unchanged; only the identity, panel and touch inputs are device specific.
-# Replace build-sheng-platform-power.py / build-native-legacy-display.py with nx729j
-# variants once the panel timings are known.
-# Every entry here is built on every kernel build, whether or not the selected
-# defconfig links it, so the list is exactly the set the current configuration
-# needs. The sheng kit's remaining archives are withheld until their qualification
-# inputs exist, because they cannot be built without them:
-#
-#   build-native-virtio-bindings.py (both components)   needs build/storage-abi/interface-audit.json,
-#       a 190-slot vtable audit of the original IOBlockStorageDevice that only a
-#       live lldb snapshot stopped at _bsd_init on this phone can produce. The
-#       nx729j UFS transport does not use it: build-storage-bindings.py binds the
-#       same 190 slots from scripts/prelink-storage-bindings.json, measured
-#       statically out of a build (scripts/scan-prelink-storage.py).
-#   build-arm-driver.py NativeVirtioBlock / NativeRamBlock   link against that audit.
-#   build-sheng-platform-power.py   needs kits/sheng/ShengPlatformPower.cpp, which no published
-#       repository contains. The equivalent effect (skipping AMFI's AON latch) is a binary patch.
-#   build-arm-driver.py NativeAdreno, build-native-adreno-kits.py,
-#   build-native-adreno-accelerator.py, build-native-legacy-display.py
-#       need an exact original GPU/framebuffer candidate.
-#   build-mockfs-fixture.py   a QEMU fixture, not a device component.
-#   build-boot-progress.py    needs kits/sheng/BootProgress.c, same missing kit as the power stub.
-#       The kernel script only calls it when XNU_BOOT_PROGRESS=1, which requires
-#       NATIVE_UFS && OWNER_ROOT_AUDIT && NATIVE_VIRTIO_BLOCK && SOURCE_CORECRYPTO14 all at once.
+defconfig = "nx729j_ipados27_defconfig"
+config_fragments = ["arch:configs/common.config", "soc:configs/sm8550.config", "os:configs/ipados.config"]
+patch_series = ["arch:patches/xnu/series", "soc:patches/xnu-12377/series", "os:patches/xnu/series", "device:patches/xnu/series"]
 archives = [
   "build-corecrypto-14.py",
   "build-corecrypto-14.py --namespace",
-  "build-arm-driver.py ArmDTPlatform",
-  "build-arm-driver.py ArmCpu",
-  # NATIVE_UFS requires NATIVE_AES, which requires the corecrypto archives above.
-  "build-arm-driver.py NativeAES",
-  "build-native-aes-bindings.py",
-  # CONFIG_XNU_SOURCE_PTHREAD=y links build/libpthread-kernel/libpthread_kernel.a.
+  "component:ArmDTPlatform",
+  "component:ArmCpu",
   "build-libpthread-kernel.py",
-  # IOBlockStorageDevice lives in the prelinked IOStorageFamily kext, not in XNU. Compiling the class in
-  # as well registers it twice, and the boot stops with "OSMetaClass: Kext com.apple.iokit.IOStorageFamily
-  # class IOBlockStorageDevice is a duplicate; kext __kernel__ already has a class by that name." This
-  # archive instead binds NativeUfs's inherited slots to the original kext code with absolute symbols.
-  "build-storage-bindings.py",
-  # RAM block transport: publishes an IOMedia from the packed Data seed the payload hands
-  # over, so mountroot has something to match before any real disk driver works. It only
-  # implements IOBlockStorageDevice, so it needs the storage bindings above and nothing else.
-  "build-arm-driver.py NativeRamBlock",
-  # NativeRamBlock's persistent overlay calls native_ufs_store_*, which only the
-  # UFS transport defines. This stage has no UFS, so bind them to a stub that
-  # reports mode()==0 and makes attachStore() skip the overlay entirely.
-  "build-storage-store-stub.py",
-  # An observer that observes nothing, for the boot_progress_poll NativeUfs declares weak.
-  "build-boot-progress-stub.py",
-  # The stage-6 component under test: the native SM8550 UFS transport.
-  "build-arm-driver.py NativeUfs",
-  # The owner-signed policies NativeUfs authenticates every root window against
-  # (-DNATIVE_VERIFIED_BLOCK=1). Both envelopes and the anchor come from
-  # build/verified-root-inputs, which the CI run fetches from the owner-policy
-  # release before the build; they are signed over the exact SHNGROOT windows of
-  # the userdata image that gets flashed, so a read the kernel authenticates is a
-  # read of the original image. This must come after NativeUfs: the script merges
-  # its objects into build/native-ufs/libNativeUfs.a, the archive the kernel link
-  # already force-loads, because definitions placed there are found by
-  # construction - a separate archive on LD_KERNEL_ARCHIVES was tried twice and
-  # produced an undefined-symbol link both times.
-  "build-verified-root-bundle.py",
-  # The native_verified_block_* queries the owner-root patches call. Upstream they
-  # live in NativeVirtioBlock; this board's verified block device is NativeUfsBlock,
-  # so the answers come from the policy table linked in above. Must come after both
-  # NativeUfs and build-verified-root-bundle.py: it merges into libNativeUfs.a and
-  # reads the policy count.
-  "build-owner-verified-block.py",
+  "component:ShengUfs",
+  "build-sheng-source-storage.py --policy-dir scripts/policies/ipados-27.0.1-24A446",
+  "component:RamBlock",
 ]
 
-[kernel.prelink]
-tool = "kits/NativePrelink/emit_prelink.py"
-kernel = "build/xnu/ios-obj/DEVELOPMENT_ARM64_BCM2837/mach.development.bcm2837.unstripped.noctf"
-kernelcache_sha256 = "f18b4df865405f2a287b84977d7aca745e056d656d9fc9df1662970ce2969de7"
-slide = "-0x1000000"
-early_security_init = "com.apple.driver.AppleMobileFileIntegrity=0xfffffff005ab4ae0"
-roots = [
-  "com.apple.AppleFSCompression.AppleFSCompressionTypeZlib",
-  "com.apple.driver.AppleARMPlatform",
-  "com.apple.driver.AppleARMWatchdogTimer",
-  "com.apple.driver.AppleAudioClockLibs",
-  "com.apple.driver.AppleEffaceableStorage",
-  "com.apple.driver.AppleIISController",
-  "com.apple.driver.AppleM2ScalerCSCDriver",
-  "com.apple.driver.AppleMobileFileIntegrity",
-  "com.apple.driver.ApplePMGR",
-  "com.apple.driver.IODARTFamily",
-  "com.apple.filesystems.apfs",
-  "com.apple.iokit.CoreAnalyticsFamily",
-  "com.apple.iokit.IOAVFamily",
-  "com.apple.iokit.IOAudio2Family",
-  "com.apple.iokit.IOCECFamily",
-  "com.apple.iokit.IOCryptoAcceleratorFamily",
-  "com.apple.iokit.IOGPUFamily",
-  "com.apple.iokit.IOHDCPFamily",
-  "com.apple.iokit.IOMobileGraphicsFamily",
-  "com.apple.iokit.IOReportFamily",
-  "com.apple.iokit.IOSlowAdaptiveClockingFamily",
-  "com.apple.iokit.IOStorageFamily",
-  "com.apple.iokit.IOSurface",
-  "com.apple.kec.Libm",
-  "com.apple.kec.corecrypto",
-  "com.apple.kext.AppleMatch",
-  "com.apple.kext.CoreTrust",
-  "com.apple.security.AppleImage4",
-  "com.apple.security.sandbox",
-  "com.apple.iokit.IOHIDFamily",
-  "com.apple.iokit.IOHIDEventDriver",
-]
-
-# The UEFI firmware port for this phone already exists upstream, in
-# UniXNU/uefi-sheng, as Platforms/ZTE/nx729jPkg. That repository is a Mu-Silicium
-# tree with one package per board, so no separate uefi-nx729j repository is needed:
-# clone uefi-sheng and point --uefi at it.
 [firmware]
-config = "nx729j"                  # Resources/Configs/nx729j.toml of the uefi-sheng checkout
+config = "nx729j"
 dsc = "Platforms/ZTE/nx729jPkg/nx729j.dsc"
 fd = "Build/nx729jPkg/{target}_CLANGPDB/FV/SILICIUM_UEFI.fd"
-preflight = ["scripts/check-nx729j.py"]
+preflight = ["scripts/apply-nx729j-uefi.py", "scripts/build-nx729j-dtb.py", "scripts/check-nx729j-ipados27.py"]
 submodules = ["Common/Mu", "Common/Mu_OEM_Sample", "Silicium-ACPI", "Silicon/Silicium/OpensslPkg/Library/OpensslLib/openssl"]
 patches = ["Resources/MuPatches/Gic-Spurious.patch"]
 packages = [
-  "{uefi}",
-  "{uefi}/Platforms/ZTE",
-  "{tree}/package",
-  "{tree}/drivers/DarwinBoot",
-  "{edk2}",
-  "{uefi}/Common/Mu",
-  "{uefi}/Common/Mu_OEM_Sample",
-  "{uefi}/Silicon/Qualcomm",
-  "{uefi}/Silicon/Silicium",
-  "{uefi}/Silicium-ACPI",
-  "{uefi}/Silicium-ACPI/Platforms/ZTE",
+  "{uefi}", "{uefi}/Platforms/ZTE", "{tree}/package", "{tree}/drivers/DarwinBoot",
+  "{edk2}", "{uefi}/Common/Mu", "{uefi}/Common/Mu_OEM_Sample", "{uefi}/Silicon/Qualcomm",
+  "{uefi}/Silicon/Silicium", "{uefi}/Silicium-ACPI", "{uefi}/Silicium-ACPI/Platforms/ZTE",
   "{uefi}/Silicium-ACPI/Silicon/Qualcomm",
 ]
 
@@ -219,75 +53,35 @@ MEMORY_PROTECTION = "TRUE"
 SHIP_MODE = "FALSE"
 BUILDID_STRING = "nx729j-research"
 
-# The ramdisk of the boot image: a FAT volume with the UniXNU config, the kernel,
-# its device tree (Resources/DTBs/nx729j.dtb from uefi-sheng) and the optional
-# trust cache and Data seed. DarwinBoot itself lives in the firmware volume.
 [payload]
 volume = "NX729JESP"
 size_mib = 192
+root_policies = "{tree}/build/sheng-source-storage/root-policies.bin"
 loader = "firmware"
-title = "nx729j first boot: source 4K XNU to console"
-dram_size = "0x400000000"           # [DTB] 16 GiB: ddr-regions 0x80000000/2G + 0x880000000/6G + 0xa00000000/8G
-skip_setup_tool = "scripts/seed-data-skip-setup.py"
-# The panic renderer in scripts/patch-xnu-entry-probe.py rewrites the kernel by
-# absolute virtual address (PANIC_VA 0xFFFFFFF00BF69B04, VINFO_VA
-# 0xFFFFFFF00C0A2970, entry 0xFFFFFFF00B9D0488). Those are sheng's addresses, from
-# a kernel whose __TEXT is big enough to push _panic past 0xB9D0000. This kernel
-# links _panic at 0xFFFFFFF0079799B0 and _start_first_cpu at 0xFFFFFFF0073EE05C,
-# so the tool refuses instead of patching the wrong bytes, and the payload build
-# stops there. Turn it back on only after verifying the three sites against a
-# rebuilt kernel. The console log now travels through the payload diagnostic
-# (tools/make-payload-diag.py) instead of the screen.
+title = "nx729j iPadOS 27 root bring-up"
+dram_size = "0x400000000"
 panic_screen = false
-# Trust caches of THIS board's IPSW (iPad7,1 / 17.7.11 / 21H461). The two sheng
-# values this block originally carried belong to another iPad model, so payload.py
-# rejected the correct file as "not one of the trust caches this board accepts".
-# Recomputed with `unixnu ipsw fetch StaticTrustCache` against this IPSW:
-#   Firmware/044-76040-038.dmg.trustcache   StaticTrustCache
-#   Firmware/044-76034-038.dmg.trustcache   Cryptex1,SystemTrustCache
-# The workflow hands payload.py out/ipsw/<build>/StaticTrustCache, i.e. the first
-# file, so that hash must be present. Re-run the fetch and `sha256sum` if the IPSW
-# ever changes.
-trust_cache_sha256 = [
-  "4563bdbf6ed8f72237d45dbba3ccde432634338f95c10d79d5d4631678a97c7c",
-  "9742f3d566369e6c48f63b3dc0740b06c243d13c6650e25bbf44616e13d6d097",
-]
-# The sheng- prefixed arguments are read by the sheng kit sources this repository
-# reuses; they are not device names. Keep them until the kit is renamed.
-kernel_args = [
-  "-v",
-  "serial=3",
-  "debug=0x14e",
-  "kt_fixed_zones=120",
-  "-no_slto_panic",
-]
-
-# Fixups of signed text, applied by the kernel after signature validation; they reach
-# it as /chosen/text-fixups, not on the command line. Each entry is
-# <file name>,<file offset>,<original>,<replacement>, in hex. The offsets belong to
-# the 21H461 shared caches, which this board uses unchanged.
-text_fixups = [
-  "dyld_shared_cache_arm64.15,421e8bc,28ad1bb0008544f9,c0035fd6008544f9",
-  "dyld_shared_cache_arm64.13,1b05bec,44008052,24008052",
-  "dyld_shared_cache_arm64.13,1b05b08,44008052,24008052",
-  "BTAudioHALPlugin,38bec,ffc300d1f44f01a9,000080d2c0035fd6",
-]
+kernel_args = ["-v", "serial=3", "debug=0x14e", "kt_fixed_zones=120", "-no_slto_panic", "use_contiguous_hint=0", "native-source-storage=1", "native-ufs-root=1"]
 
 [payload.adt]
-tool = "scripts/make-nx729j-adt.py"
-chip_id = "207"                     # [DTB] qcom,msm-id 0x207 (SM8550-AB); same value sheng uses
+chip_id = "207"
 owned_memory_size = "0x130000000"
-root_match_volume_uuid = "04769D26-2CA0-4825-B443-E2E5F88300F2"
-cpu_regs = "0,0x100,0x200,0x300,0x400,0x500,0x600,0x700"   # [DTB] /cpus reg 0x00..0x700
+root_match_volume_uuid = "2F8E6EED-68D5-4261-B8A3-12571BAA2DD4"
 packed_data_ramdisk = true
 persistent_data = true
-ipad_identity = true
-unique_chip_id = "required"         # the platform seed is not stored in any repository
+unique_chip_id = "required"
 
-# No [[bootimg.dtb_node]] here, unlike sheng.
-#
-# [DTB] nx729j.dts already carries /reserved-memory/splash_region
-# (label cont_splash_region, reg 0x0 0xb8000000 0x0 0x2b00000), so the stock ABL
-# finds the region it expects and does not power the panel off. Adding a second node
-# with the same path would collide. Verify after the first boot that the panel stays
-# on; if it does not, re-check the region in the DTB before adding anything here.
+[bootimg]
+dtb = "build/nx729j/nx729j.dtb"
+
+[device_tree]
+source = "device:dts/nx729j.dts"
+include_dirs = ["soc:dts"]
+
+[components]
+include = ["ArmDTPlatform", "ArmCpu", "XnuPrelink", "DarwinBoot", "ShengUfs", "RamBlock"]
+[package]
+unixnu = "../UniXNU"
+
+[package.defconfig]
+"ipados-27.0.1-24A446" = "nx729j_ipados27_defconfig"

@@ -43,3 +43,6 @@ __pycache__/
 *.key
 .env
 local.toml
+
+# Signed OS-profile policy headers are distributable port inputs; block tables stay local.
+!scripts/policies/**/*.bin
