@@ -9,6 +9,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import re
 import shutil
 import subprocess
 
@@ -23,6 +24,58 @@ def load(name, path):
     return module
 
 
+def weak_diag_defaults(source, builder):
+    """Keep this fallback object independent of unrelated XNU kernel headers.
+
+    BootDiagExport's optional weak symbols are mostly scalar/pointer declarations.
+    Replaying all of its includes in a second translation unit pulls in IPC headers
+    with incompatible BSD-private declaration paths. Only concrete struct arrays
+    need their local element definitions; pointer-only struct types can stay opaque.
+    """
+    normalized = source.with_name(".BootDiagExportWeakDefaultsInput.c")
+    normalized.write_text('\n'.join(
+        line.split('//', 1)[0] if 'weak_import' in line else line
+        for line in source.read_text().splitlines()) + '\n')
+    try:
+        generated = builder.weak_defaults(normalized).splitlines()
+    finally:
+        normalized.unlink(missing_ok=True)
+    marker = '#pragma clang diagnostic ignored "-Wc23-extensions"'
+    try:
+        declarations = generated[generated.index(marker) + 1:]
+    except ValueError as error:
+        raise SystemExit("upstream weak-default generator output changed") from error
+
+    text = source.read_text()
+    complete = set(re.findall(r'^extern\s+struct\s+(\w+)\s+\w+\s*\[', text, re.M))
+    referenced = set(re.findall(r'\bstruct\s+(\w+)', '\n'.join(declarations)))
+    forwards = [f'struct {name};' for name in sorted(referenced - complete)]
+    definitions = []
+    for name in sorted(complete):
+        start = re.search(rf'\bstruct\s+{re.escape(name)}\s*\{{', text)
+        if not start:
+            raise SystemExit(f"missing local definition for weak array element struct {name}")
+        opening = text.find('{', start.start())
+        depth = 0
+        end = None
+        for index in range(opening, len(text)):
+            if text[index] == '{':
+                depth += 1
+            elif text[index] == '}':
+                depth -= 1
+                if depth == 0:
+                    end = index + 1
+                    while end < len(text) and text[end].isspace():
+                        end += 1
+                    if end < len(text) and text[end] == ';':
+                        end += 1
+                    break
+        if end is None:
+            raise SystemExit(f"unterminated local definition for struct {name}")
+        definitions.append(text[start.start():end].strip())
+    return '\n'.join(['#include <stdint.h>', *forwards, *definitions, marker, *declarations]) + '\n'
+
+
 def main():
     source = TREE / "kits/sheng/BootDiagExport.c"
     generated = OUT / "BootDiagExportWeakDefaults.c"
@@ -34,7 +87,7 @@ def main():
         raise SystemExit("source-storage build outputs are missing; run the upstream recipe first")
 
     builder = load("nx729j_source_storage_builder", TREE / "scripts/build-sheng-source-storage.py")
-    generated.write_text(builder.weak_defaults(source))
+    generated.write_text(weak_diag_defaults(source, builder))
     command = json.loads(command_file.read_text())
     source_indexes = [index for index, argument in enumerate(command)
                       if Path(argument).name == "BootDiagExport.c"]

@@ -93,15 +93,34 @@ def check_memory_map(uefi, firmware):
         return
     add(OK, 'uefi.memory_map', f'{len(rows)} descriptors')
 
+    dsc = uefi / 'Platforms' / 'ZTE' / 'nx729jPkg' / 'nx729j.dsc'
+    system_base = None
+    if dsc.exists():
+        match = re.search(r'PcdSystemMemoryBase\|(0x[0-9a-fA-F]+)', dsc.read_text(errors='replace'))
+        if match:
+            system_base = int(match.group(1), 16)
+
     problems = []
-    for index, (name, base, size, _) in enumerate(rows):
+    intentional_overlaps = []
+    for index, (name, base, size, attributes) in enumerate(rows):
         if size % 4096 or base % 4096 or not size:
             problems.append(f'{name}: not page aligned')
-        for other, other_base, other_size, _ in rows[index + 1:]:
+        for other, other_base, other_size, other_attributes in rows[index + 1:]:
             if max(base, other_base) < min(base + size, other_base + other_size):
+                # The shared AOP message RAM is a subrange of the broad AOSS
+                # device aperture in the vendor map. Both resolve to the same
+                # NS_DEVICE page attributes, and PEI intentionally skips
+                # overlap validation below PcdSystemMemoryBase.
+                is_aop_alias = {name, other} == {'AOP_SS_MSG_RAM', 'AOSS'}
+                same_arm_attributes = attributes.rsplit(',', 1)[-1].strip() == other_attributes.rsplit(',', 1)[-1].strip()
+                below_system_memory = system_base is not None and max(base, other_base) < system_base
+                if is_aop_alias and same_arm_attributes and below_system_memory:
+                    intentional_overlaps.append(f'{name}/{other}')
+                    continue
                 problems.append(f'{name} overlaps {other}')
     add(FAIL if problems else OK, 'uefi.memory_map.alignment',
-        '; '.join(problems[:4]) if problems else 'aligned, no overlap')
+        '; '.join(problems[:4]) if problems else
+        ('aligned; matching AOP/AOSS device-memory alias accepted' if intentional_overlaps else 'aligned, no overlap'))
 
     # The firmware volume and the UEFI stack must be described here, or the first
     # memory write lands in a reserved range.
@@ -177,6 +196,15 @@ def main():
     with open(args.board, 'rb') as handle:
         board = tomllib.load(handle)
 
+    profile = {}
+    profile_name = board.get('board', {}).get('os_profile')
+    profile_path = ROOT.parent / 'UniXNU' / 'profiles' / 'os' / str(profile_name) / 'profile.toml'
+    if profile_path.is_file():
+        with profile_path.open('rb') as handle:
+            profile = tomllib.load(handle)
+    elif profile_name:
+        add(WARN, 'os_profile', f'pinned profile not found at {profile_path}')
+
     # ---------------------------------------------------------------- identity
     name = board.get('board', {}).get('name')
     add(OK if name == 'nx729j' else FAIL, 'board.name',
@@ -185,9 +213,14 @@ def main():
     add(OK if soc == 'SM8550' else WARN, 'board.soc', f'{soc!r}')
 
     # ------------------------------------------------------------------- IPSW
-    ipsw = board.get('ipsw', {})
+    ipsw = board.get('ipsw') or profile.get('ipsw', {})
+    profile_prelink = profile.get('kernel', {}).get('prelink', {})
     if ipsw.get('product') == 'iPad7,1' and ipsw.get('build') == '21H461':
         add(OK, 'ipsw', 'iPad7,1 17.7.11 21H461, same target image as sheng')
+    elif profile_prelink.get('kernelcache_sha256') and profile_prelink.get('slide'):
+        add(OK, 'ipsw',
+            f'{ipsw.get("product")} {ipsw.get("version")} {ipsw.get("build")}: '
+            'selected OS profile has its own kernelcache pin and slide')
     else:
         add(WARN, 'ipsw',
             f'{ipsw.get("product")} {ipsw.get("version")} {ipsw.get("build")}: '
@@ -222,7 +255,7 @@ def main():
     add(OK if path.exists() else FAIL, 'kernel.defconfig',
         f'configs/{defconfig} {"" if path.exists() else "missing"}'.strip())
 
-    prelink = board.get('kernel', {}).get('prelink', {})
+    prelink = board.get('kernel', {}).get('prelink') or profile_prelink
     add(OK if prelink.get('slide') else FAIL, 'kernel.prelink.slide',
         f'{prelink.get("slide")!r}')
     add(OK if prelink.get('kernelcache_sha256') else FAIL, 'kernel.prelink.kernelcache_sha256',
@@ -252,14 +285,24 @@ def main():
             '(8 GiB = 0x200000000, 12 GiB = 0x300000000)')
 
     kernel_args = payload.get('kernel_args', [])
-    for required in ('native-ufs-root=1', 'sheng-pmgr=2'):
-        add(OK if required in kernel_args else FAIL, 'payload.kernel_args', required)
+    if 'native-ufs-root=1' in kernel_args:
+        pmgr_count = kernel_args.count('sheng-pmgr=2')
+        add(OK if pmgr_count == 1 else FAIL, 'payload.kernel_args',
+            f'native UFS root has {pmgr_count} sheng-pmgr=2 arguments')
+    else:
+        add(WARN, 'payload.kernel_args',
+            'native UFS root deferred until a PMGR integration is validated for the selected iOS ABI')
     add(OK, 'payload.text_fixups',
         f'{len(board.get("payload", {}).get("text_fixups", []))} entries')
 
     adt = payload.get('adt', {})
-    tool = ROOT / str(adt.get('tool', ''))
-    add(OK if tool.exists() else FAIL, 'payload.adt.tool', str(adt.get('tool')))
+    if board.get('schema_version') == 2:
+        device_tree = board.get('device_tree', {})
+        add(OK if device_tree.get('source') else FAIL, 'payload.adt.tool',
+            'format-2 ADT generated from device_tree' if device_tree.get('source') else 'device_tree source missing')
+    else:
+        tool = ROOT / str(adt.get('tool', ''))
+        add(OK if tool.exists() else FAIL, 'payload.adt.tool', str(adt.get('tool')))
     add(OK if adt.get('chip_id') == '207' else WARN, 'payload.adt.chip_id',
         f'{adt.get("chip_id")!r} (SM8550-AB is 0x207)')
 

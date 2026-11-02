@@ -1,3 +1,4 @@
 # NX729J-only iPadOS 27 patches are added here after review.
 # In prelinked mode, the XNU script omits the source bootstrap object, so OSKext starts the original kext once.
 prelinked-corecrypto-oskext.patch
+native-stack-shift.patch

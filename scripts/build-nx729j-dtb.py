@@ -8,7 +8,8 @@ import subprocess
 import tempfile
 
 TREE = Path(__file__).resolve().parents[1]
-PACKAGE_CANDIDATES = (TREE / "kits/nx729j/firmware/nx729j.dts",
+PACKAGE_CANDIDATES = (TREE / "kits/sheng/firmware/nx729j.dts",
+                      TREE / "kits/nx729j/firmware/nx729j.dts",
                       TREE / "package/firmware/nx729j.dts")
 source = next((p for p in PACKAGE_CANDIDATES if p.is_file()), None)
 if source is None:
@@ -20,7 +21,9 @@ uefi = Path(uefi_value).resolve()
 if not (uefi / "Platforms/ZTE/nx729jPkg/nx729j.dsc").is_file():
     raise SystemExit(f"not an NX729J uefi-sheng checkout: {uefi}")
 
-outputs = (TREE / "build/nx729j/nx729j.dtb", uefi / "Resources/DTBs/nx729j.dtb")
+# The board config feeds this generated DTB to bootimg. Leave the pinned UEFI
+# checkout's separately tracked Resources/DTBs/nx729j.dtb untouched.
+outputs = (TREE / "build/nx729j/nx729j.dtb",)
 for output in outputs:
     output.parent.mkdir(parents=True, exist_ok=True)
 fd, temp_name = tempfile.mkstemp(prefix="nx729j-", suffix=".dtb", dir=outputs[0].parent)

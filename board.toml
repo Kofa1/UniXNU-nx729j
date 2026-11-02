@@ -38,7 +38,7 @@ config = "nx729j"
 dsc = "Platforms/ZTE/nx729jPkg/nx729j.dsc"
 fd = "Build/nx729jPkg/{target}_CLANGPDB/FV/SILICIUM_UEFI.fd"
 preflight = ["scripts/apply-nx729j-uefi.py", "scripts/build-nx729j-dtb.py", "scripts/check-nx729j-ipados27.py"]
-submodules = ["Common/Mu", "Common/Mu_OEM_Sample", "Silicium-ACPI", "Silicon/Silicium/OpensslPkg/Library/OpensslLib/openssl"]
+submodules = ["Binaries", "Common/Mu", "Common/Mu_OEM_Sample", "Silicium-ACPI", "Silicon/Silicium/OpensslPkg/Library/OpensslLib/openssl"]
 patches = ["Resources/MuPatches/Gic-Spurious.patch"]
 packages = [
   "{uefi}", "{uefi}/Platforms/ZTE", "{tree}/package", "{tree}/drivers/DarwinBoot",
@@ -58,11 +58,17 @@ BUILDID_STRING = "nx729j-research"
 volume = "NX729JESP"
 size_mib = 192
 root_policies = "{tree}/build/sheng-source-storage/root-policies.bin"
+trust_cache_sha256 = ["dc655bcb2ddfaea214f9ec83659b3fc8d8b658bafac2b5a004fb4179a25c89bf"]
 loader = "firmware"
-title = "nx729j iPadOS 27 root bring-up"
-dram_size = "0x400000000"
+title = "nx729j iPadOS 27 kernel-entry bring-up"
+# The DTB reports the contiguous, unreserved 5 GiB bank at 0x8c0000000.
+# The full 16 GiB physical layout remains in /ddr-regions.
+dram_size = "0x140000000"
 panic_screen = false
-kernel_args = ["-v", "serial=3", "debug=0x14e", "kt_fixed_zones=120", "-no_slto_panic", "use_contiguous_hint=0", "native-source-storage=1", "native-ufs-root=1"]
+# Keep source storage and native UFS root disabled until this iPadOS 27 kernel
+# has a PMGR integration audited for its own ABI. The available PMGR builder
+# is pinned to the iOS 17 ABI and cannot be reused here.
+kernel_args = ["-v", "serial=3", "debug=0x14e", "kt_fixed_zones=120", "-no_slto_panic", "use_contiguous_hint=0"]
 
 [payload.adt]
 chip_id = "207"
@@ -74,6 +80,11 @@ unique_chip_id = "required"
 
 [bootimg]
 dtb = "build/nx729j/nx729j.dtb"
+
+[bootimg.image]
+# The pinned UniXNU packer/verifier supports this device's legacy v0 header.
+# The pinned uefi-sheng config requests v4, which its verifier cannot parse.
+header_version = 0
 
 [device_tree]
 source = "device:dts/nx729j.dts"

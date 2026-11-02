@@ -1,0 +1,19 @@
+diff --git a/osfmk/kern/startup.c b/osfmk/kern/startup.c
+--- a/osfmk/kern/startup.c
++++ b/osfmk/kern/startup.c
+@@ -219,6 +219,15 @@
+ /* Indicates a server boot when set */
+ TUNABLE(int, serverperfmode, "serverperfmode", 0);
+ 
++/* The reviewed iPadOS 27 AMFI GOT site needs the native stack allocation
++ * alignment (32 KiB), while PAGE_SHIFT describes 4 KiB kernel pages. */
++__attribute__((used, visibility("default")))
++const uint32_t unixnu_kernel_stack_shift = 15;
++
++/* UniXNU prelink reseals this field after relocating the native kernel text. */
++__attribute__((used, visibility("default"), section("__TEXT,__fips_hmacs")))
++const unsigned char unixnu_fips_hmac[32] = {0};
++
+ static inline void
+ kernel_bootstrap_log(const char *message)
+ {

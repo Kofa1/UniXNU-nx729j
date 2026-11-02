@@ -25,14 +25,14 @@
 | 屏幕 | 1116 × 2480，6.97 英寸，71 × 157 mm 有效区 | `[DTB]` 面板节点 |
 | 触控 | Goodix GT9916（`gtx8_spi`，Berlin 系列，`goodix,brl-d`） | `[DTB]` + Device Info HW 报告 |
 | 存储 | UFS 4.0，单 LUN 0（`/dev/block/sda`） | `[DTB]` `ufshc@1d84000` |
-| 内存 | 16 GiB LPDDR5X | `[DTB]` `ddr-regions` |
+| 内存 | 16 GiB LPDDR5X | `[DTB]` `ddr-regions`；ADT handoff 选择其内 5 GiB 连续未保留窗口 |
 
 ## 2. 内存与中断（SoC 级，与 sheng 共用）
 
 | 项 | 值 | 出处 |
 | --- | --- | --- |
-| DRAM base | `0x80000000` | `[DTB]` `memory/reg` |
-| DDR 分区 | `0x80000000`+2 GiB、`0x880000000`+6 GiB、`0xa00000000`+8 GiB = 16 GiB | `[DTB]` `ddr-regions` |
+| 设备树物理内存布局 | `0x80000000`+2 GiB、`0x880000000`+6 GiB、`0xa00000000`+8 GiB = 16 GiB | `[DTB]` `ddr-regions` |
+| ADT 连续 DRAM 窗口 | base `0x8c0000000`，size `0x140000000`（5 GiB），结束于 `0xa00000000` | `dts/nx729j.dts` 的 `memory/reg`；避开 `/reserved-memory`，供 pinned UniXNU ADT 生成器使用 |
 | 可用内存（Android 口径） | `mem=12592218112B` | `[DTB]` `chosen/bootargs` |
 | GIC distributor | `0x17100000` / `0x10000` | `[DTB]` `/soc/interrupt-controller@17100000` |
 | GIC redistributor | `0x17180000` / `0x200000`，stride `0x40000` | `[DTB]` 同上 |
@@ -124,7 +124,7 @@ python3 scripts/extract-panel-timings.py --dts nx729j.dts --active \
 | UEFI FD 基址 | `0xA7100000`，大小 `0x300000` | `[UEFI]` `Resources/Configs/nx729j.toml` |
 | UEFI 栈 | `0xA760D000`，主核栈 `0x40000` | `[UEFI]` `nx729j.dsc` |
 | FD 输出名 | `Build/nx729jPkg/{target}_CLANGPDB/FV/SILICIUM_UEFI.fd` | `[UEFI]` `nx729j.fdf` `[FD.SILICIUM_UEFI]` |
-| boot image header | version 4，kernel gzip，append_dtb | `[UEFI]` `nx729j.toml` |
+| boot image header | `uefi-sheng` 默认 v4；NX729J board override v0（pinned UniXNU verifier 支持），kernel gzip，append DTB | `Resources/Configs/nx729j.toml`、device `board.toml [bootimg.image]` |
 | splash 区域 | `/reserved-memory/splash_region` = `0xb8000000` + `0x2b00000` | `[DTB]`，**已存在**，因此 board.toml 不再追加 `[[bootimg.dtb_node]]` |
 | BL 解锁 | `fastboot oem nubia_unlock NUBIA_NX729J` → `fastboot flashing unlock` | 官方开放方式，解锁会清数据 |
 
@@ -133,5 +133,5 @@ python3 scripts/extract-panel-timings.py --dts nx729j.dts --active \
 | 项 | 采集方式 | 填到 |
 | --- | --- | --- |
 | `userdata` 的 `first_lba` / `last_lba` | `python3 scripts/collect-nx729j.py` | `board.toml [userdata]` |
-| 16 GiB 机型的实际可用内存上限 | 同上（`MemTotal`） | 交叉核对 `payload.dram_size` |
+| 16 GiB 机型的实际可用内存上限 | 同上（`MemTotal`） | 交叉核对 `/ddr-regions`；ADT 的 `payload.dram_size` 是为生成器选定的 5 GiB 连续窗口 |
 | 面板是否真的点亮（splash 是否生效） | 首次 `fastboot boot` 目视 | 无需进配置文件 |
