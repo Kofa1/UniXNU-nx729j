@@ -1,4 +1,561 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éí×Ş8é:-jZ.¶›­–)Ş³Ròò5E‚ÔÆ–6Vç6RÔ–FVçF–f–W#¢Ô•@¢òòF–væ÷7F–2f–ÆRW‡÷'B†–çBÓ#r“¢F†RVæ–f–VBÆörF†BÆövBW'6—7FVB‚÷&—fFR÷f"öF"öF–væ÷7F–72Âv—F‚F†Rf÷&ÖB7G&–æw2–à¢òò÷&—fFR÷f"öF"÷WV–GFW‡B’æBF†R7&6‚&W÷'G2Â&VB'’F†R¶W&æVÂ—G6VÆbÂ6òæV—F†W"6æF&÷‚æ÷"ÆVæ6†B¦ö"F†BæWfW"'Vç0¢òò†G&Væ÷&ö&VB’7FæG2–âF†Rv’â&ö÷DÆöræ26·2f÷"F†R7G&VÒöæ6R‡6†VærÖF–rÖW‡÷'CÓÇ6V6öæG3â’æBw&—FW2—B–çFòF†R†ÆböbF†P¢òòW‡÷'B&Vv–öâF†R—VÆ–æRÖ66†R&Æö"FöW2æ÷B†öÆC²67&—G2÷&VB×6†VærÖÆörç’Vç6·2—B–çFòF†R'Vâw2F–ròF—&V7F÷'’à¢òò7G&VÓ¢%4„U…#"ÂS3"7G&VÒ'—FW2ÂS3"ÂF†VâF†R66†RW‡÷'Bw27G&VÒ†G&—fW'2ôG&VæôÖWFÂô66†TW‡÷'Bæ‚Â$Ó%d44ƒ"’v—F‚&ö÷@¢òò"ò"æBWfW'’F‚&VÆF—fRFò—BâF†R66âÆ—7G2WfW'’f–ÆRf—'7BæB7VæG2F†R'VFvWB–âF†R÷&FW"öbv÷'F‚‡F†RÆöræWvW7Bf–ÆP¢òòf—'7BÂF†Vâ—G2f÷&ÖB7G&–æw2ÂF†VâF†R7&6‚&W÷'G2’Â6òâöÆFW"&ö÷Bw2Æ&vRÆörf–ÆW2æWfW"W6‚÷WBF†—2&ö÷Bw2âF†Rf÷&Ö@¢òò7G&–æw26öÖRÆ7BÖöærF†RÆörw2f–ÆW2&V6W6RF†W’öæÇ’6†ævRv—F‚F†R&–æ&–W3¢F†R†÷7B¶VW2F†÷6RöbV&Æ–W"'Vç2à¢òò67&VVâæ&w'‚—2F†RæVÂw266æ÷WBB†Æb&W6öÇWF–öâƒbÖ'—FR†VFW"%4„õB"ÂS3"v–GF‚Â†V–v‡BÂ7G&–FRÂF†Vâ$u%‚&÷w2’Â6òF†P¢òò'Vâ6†÷w2v†Bv2öâF†R67&VVââf–ÆW2F†BFòæ÷Bf—BF†R'VFvWB&RæÖVB–âF–r×6¶—VBçG‡BÂF†R7G&VÒw2Æ7Bf–ÆRà¢6–æ6ÇVFRÇ7—2÷&Òæƒà¢6–æ6ÇVFRÇ7—2÷7—7FÒæƒà¢6–æ6ÇVFRÇ7—2÷&ö2æƒà¢6–æ6ÇVFRÇ7—2÷fæöFRæƒà¢6–æ6ÇVFRÇ7—2÷V–òæƒà¢6–æ6ÇVFRÇ7—2öF—&VçBæƒà¢6–æ6ÇVFRÇ7—2öf6çFÂæƒà¢6–æ6ÇVFRÇ7—2ö¶WF‚æƒà¢6–æ6ÇVFRÄ”ô¶—Bô”ôÆ–"æƒà¢6–æ6ÇVFRÇW‡W'B÷W‡W'Bæƒà ¦VçVÒ´F–tÖ„f–ÆW2ÒcCBÂF–uF‚Ò“"ÂF–tFWF‚ÒbÂF–t6‡Væ²Ò#Sb¢#BÂF–tæ÷FRÒ3#sc‡Ó°§7G'V7BF–uöf–ÆR¶6†"F…´F–uF…Ó²V–çCcE÷B6—¦S²V–çC3%÷BÖöFRÂV–BÂv–BÂ&ö÷BÂ¶VW·Ó°§7FF–27G'V7BF–uöf–ÆR¦F–uöf–ÆW3°§7FF–2V–çC3%÷BF–uö6÷VçBÂF–u÷6¶—VEö6÷VçC°§7FF–26†"¦F–uöæ÷FS²òòF–r×6¶—VBçG‡@§7FF–26—¦U÷BF–uöæ÷FU÷W6VC°§föÆF–ÆRV–çC3%÷B&ö÷EöF–uöf–ÆW2Â&ö÷EöF–u÷6¶—VBÂ&ö÷EöF–uöW'&÷'3°§föÆF–ÆRV–çC3%÷B&ö÷EöF–uöÆÆö3²òòF†R66âw2ÆÆö6F–öç2F†Bf–ÆVC¢F†Rf–ÆRF&ÆRÂ"F†Ræ÷FP ¢òò–âF†R÷&FW"öbF†V—"v÷'Fƒ¢F†Rf÷&ÖB7G&–æw2öbV&Æ–W"'Vç2&RöâF†R†÷7BÇ&VG’ÂæBF†R7&6‚&W÷'G2&R&&VÇ’æVVFVBà¢òò&ö÷BÖ’&R6–ævÆRf–ÆS¢F†R&VæFW"6W'fW"w26†FW"&–Ö–ær7FFR…&–ÖU6†FW'2æ‚’–â—G2W'6—7FVçB66†RF—&V7F÷'’Â6ÖÆÂæ@¢òòF†RöæÇ’&V6÷&Böb†÷rf"&–Ö–ærv÷B†&6¶&ö&FB'Vç22Öö&–ÆS²F†R&ö÷B†öÖR—2F†RfÆÆ&6²’à§7FF–26öç7B6†"¦6öç7BF–u÷&ö÷G5µÒÒ°¢"÷&—fFR÷f"öÖö&–ÆRôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'b÷&–ÖRæÆör"À¢"÷&—fFR÷f"öÖö&–ÆRôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'b÷&–ÖRÖ&B"À¢"÷&—fFR÷f"÷&ö÷BôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'b÷&–ÖRæÆör"À¢"÷&—fFR÷f"÷&ö÷BôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'b÷&–ÖRÖ&B"À¢"÷&—fFR÷f"öÖö&–ÆRôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'b÷6†F÷ræÆör"À¢"÷&—fFR÷f"÷&ö÷BôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'b÷6†F÷ræÆör"À¢"÷&—fFR÷f"öÖö&–ÆRôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'bög&ÖW2çG&6R"À¢"÷&—fFR÷f"÷&ö÷BôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'bög&ÖW2çG&6R"À¢"÷&—fFR÷f"öÖö&–ÆRôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'bö7Rç&öf–ÆR"À¢"÷&—fFR÷f"÷&ö÷BôÆ–'&'’ô66†W2ö6öÒæÆRæ&6¶&ö&FBöÓ'bö7Rç&öf–ÆR"À¢òò6f&’w2'V–ÇBÖ–âFFÆ—7G2†–çBÓ#c“¢æ–Â'V–ÇBÖ–âÆ—7BU$Â&÷'FVBÖö&–ÆU6f&’“¢v†BF—&V7F÷'’&VBöbF†Rg&ÖWv÷&°¢òò&WGW&ç2æW‡BFòv†BÆöö·WöbV6‚f–ÆRf–æG2â6ÖÆÂÂ6òF†W’vò&Vf÷&RF†RÆörà¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&•6†&VBæg&ÖWv÷&²õW6W$vVçEV—&·2çÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&•6†&VBæg&ÖWv÷&²õ6—FW4ÆÆ÷vVEFôWF÷Æ’çÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&•6†&VBæg&ÖWv÷&²õ6—FW4ÆÆ÷vVEFõW6TWF÷Æ•V—&·2çÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&•6†&VBæg&ÖWv÷&²õt%4öffÆ–æU6V&6…&VÖ÷FTF—6&ÆVÖVçDFVfVÇD6öæf–rçÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&•6†&VBæg&ÖWv÷&²õt%577v÷&D'&V6„6öæf–wW&F–öä&rçÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&”6÷&Ræg&ÖWv÷&²õt%4WFôf–ÆÅV—&·2çÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&”6÷&Ræg&ÖWv÷&²õt%577v÷&Ev&æ–æuF÷g&VEF&vWG2çÆ—7B"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&•6†&VBæg&ÖWv÷&²"À¢"õ7—7FVÒôÆ–'&'’õ&—fFTg&ÖWv÷&·2õ6f&”6÷&Ræg&ÖWv÷&²"À¢"÷&—fFR÷f"öF"öF–væ÷7F–72"À¢"÷&—fFR÷f"öF"÷WV–GFW‡B"À¢"÷&—fFR÷f"öÖö&–ÆRôÆ–'&'’ôÆöw2ô7&6…&W÷'FW""À§Ó°¦W‡FW&âföÆF–ÆRV–çCcE÷BæF—fUöv÷÷f—'GVÂõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âfö–BæF—fUöÆVv7•öF—&V7E÷6æ6†÷B‡fö–B’õöGG&–'WFUõò‚‡vVµö–×÷'B’“²òòF—&V7B66æ÷WC¢6÷–W2F†R7W&f6Röâ67&VVâ–çFòF†R&ö÷BÖVÖ÷'¦W‡FW&âfö–B6÷'B‡fö–B¢Â6—¦U÷BÂ6—¦U÷BÂ–çB‚¢’†6öç7Bfö–B¢Â6öç7Bfö–B¢’“°§7FF–2V–çC3%÷B6†÷E÷v–GF‚Â6†÷Eö†V–v‡C²òòF†R†Æb×&W6öÇWF–öâ67&VVç6†÷C²v†VâF†W&R—2æò66æ÷W@¢òò66VæR67&VVç6†÷G2F¶Vâv†–ÆRF†R'VâvöW2†&ö÷EöF–u÷6†÷E÷F–6²“¢WFòF–u6†÷G2öbF†RæVÂBV'FW"&W6öÇWF–öâÂ¶WB–âÖVÖ÷'’æ@¢òòW‡÷'FVB267&VVâÓÇ6V6öæG2öbÆörF–ÖSâæ&w'‚Â6ò66VæRF†B—2vöæR'’F†RW‡÷'B—27F–ÆÂöâf–ÆRâF†W’&RæÇ—6VB'’6öFRöæÇ’à¦VçVÒ´F–u6†÷G2Ò#GÓ²òòWfW'’‚2g&öÒ“2Fò#sB2BV'FW"&W6öÇWF–öã¢F†R66VæRöbV6‚ÖöÖVçBöbF†RW6W"w26W76–öà§7FF–2V–çC…÷B§6†÷EöFF´F–u6†÷G5Ó°§7FF–2V–çC3%÷B6†÷E÷F–ÖU´F–u6†÷G5ÒÂ6†÷E÷rÂ6†÷Eö‚Â6†÷E÷F¶Vã°§7FF–26öç7BV–çC3%÷B6†÷EöE´F–u6†÷G5ÒÒ³“Â“‚ÂbÂBÂ#"Â3Â3‚ÂCbÂSBÂc"ÂsÂs‚ÂƒbÂ“BÂ#"Â#Â#‚Â##bÂ#3BÂ#C"Â#SÂ#S‚Â#cbÂ#sGÓ°¢òòF†R¶W&æVÂw2&–æw2Â2FW‡B†¶W&æVÂç&–æw2çG‡B’Âf÷&ÖGFVBBF†R66â6ò—G2ÆVæwF‚—2¶æ÷vâæBVÖ—GFVB2—Bv2F†Vâà¦W‡FW&âföÆF–ÆRV–çCcE÷B‚¦æF—fUöÆVv7•÷&–ær•³%ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöÆVv7•÷&–æuö6õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöÆVv7•÷&–æuö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çCcE÷BæF—fUöÆVv7•÷6æ³cEÕ³%ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöÆVv7•÷6æö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöÆVv7•÷7v7FE³eÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çCcE÷B‚¦æF—fUöG&Væõ÷FÂ•³…ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷7v—F6…öÆöu³eÕ³3EÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷7v—F6…ö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷&V6÷fW%öÆöu³…Õ³%ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷&V6÷fW%öÆöuö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷&–õöÆöu³3%Õ³eÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷&–õö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷B¦æF—fUöG&Væõ÷75öÆörõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷75ö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷B¦æF—fUöG&Væõ÷—UöÆörõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷—Uö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷FÅö6õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷FÅö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çCcE÷BæF—fUöG&Væõ÷7FÆÅöÆöu³3%Õ³…ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõ÷7FÆÅöÆöuö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çCcE÷BæF—fUöwUöF7g5öÆöu³#SeÕ³%ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöwUöF7g5öÆöuö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöv÷÷v—E÷&–æuö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çCcE÷BæF—fUöv÷÷v—E÷&–æu³cEÕ³5ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöv÷÷v—E÷&V6öç5³EÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&â6†"¥Uö&ö÷Eö&w2‡fö–B“°¦W‡FW&â6†"&ö÷EöÆöuöWF÷&W6WE÷FW‡E³#ÒõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒ´F–u&–æw2ÒC“C3GÓ°§7FF–26†"§&–æw5÷FW‡C°§7FF–26—¦U÷B&–æw5öÆVã°§7FF–2V–çC3%÷B&–æw5ö¶VWÂ6†÷G5ö¶WBÂ—5ö¶VW° §7FF–2fö–Bæ÷FR†6öç7B6†"§FW‡BÂ6öç7B6†"§F‚Â–çBW'&÷"’°¢–b‚F–uöæ÷FR’&WGW&ã°¢–çBâÒ6ç&–çFb†F–uöæ÷FR²F–uöæ÷FU÷W6VBÂF–tæ÷FRÒF–uöæ÷FU÷W6VBÂ"W2W2VEÆâ"ÂFW‡BÂF‚ÂW'&÷"“°¢–b†ââbbF–uöæ÷FU÷W6VB²‡6—¦U÷B–âÂF–tæ÷FR’F–uöæ÷FU÷W6VB³Ò‡6—¦U÷B–ã°§Ğ §7FF–2fö–BFB†6öç7B6†"§F‚ÂV–çC3%÷B&ö÷BÂfg5ö6öçFW‡E÷B7G‚’°¢fæöFU÷Bf–ÆRÒåTÄÅe°¢–çBW'&÷"ÒfæöFUöÆöö·W‡F‚ÂÂff–ÆRÂ7G‚“°¢–b†W'&÷"’¶æ÷FR‚&Æöö·W"ÂF‚ÂW'&÷"“²²¶&ö÷EöF–uöW'&÷'3²&WGW&ã·Ğ¢7G'V7BfæöFUöGG"f°¢dEE%ô”ä•B‚gf“°¢dEE%õtåDTB‚gfÂföFF÷6—¦R“°¢dEE%õtåDTB‚gfÂföÖöFR“°¢dEE%õtåDTB‚gfÂf÷V–B“°¢dEE%õtåDTB‚gfÂföv–B“°¢W'&÷"ÒfæöFUövWFGG"†f–ÆRÂgfÂ7G‚“°¢fæöFU÷WB†f–ÆR“°¢–b†W'&÷"’¶æ÷FR‚&vWFGG""ÂF‚ÂW'&÷"“²²¶&ö÷EöF–uöW'&÷'3²&WGW&ã·Ğ¢–b†F–uö6÷VçBãÒF–tÖ„f–ÆW2’¶æ÷FR‚'VæÆ—7FVB"ÂF‚Â†–çB’‡fçföFF÷6—¦Rãâ’“²²¶F–u÷6¶—VEö6÷VçC²&WGW&ã·Ğ¢7G'V7BF–uöf–ÆR¦bÒfF–uöf–ÆW5¶F–uö6÷VçB²µÓ°¢7G&Æ7’†bÓçF‚ÂF‚Â6—¦VöbbÓçF‚“°¢bÓç6—¦RÒfçföFF÷6—¦S²bÓæÖöFRÒfçföÖöFS²bÓçV–BÒfçf÷V–C²bÓæv–BÒfçföv–C²bÓç&ö÷BÒ&ö÷C²bÓæ¶VWÒ°§Ğ §7FF–2fö–B66â†6öç7B6†"§F‚ÂVç6–væVBFWF‚ÂV–çC3%÷B&ö÷BÂfg5ö6öçFW‡E÷B7G‚’°¢fæöFU÷BF—"ÒåTÄÅe°¢–çBW'&÷"ÒfæöFUöÆöö·W‡F‚ÂÂfF—"Â7G‚“°¢–b†W'&÷"’¶æ÷FR‚&Æöö·W"ÂF‚ÂW'&÷"“²²¶&ö÷EöF–uöW'&÷'3²&WGW&ã·Ğ¢–b‡fæöFU÷gG—R†F—"’ÓÒe$Tr’·fæöFU÷WB†F—"“²FB‡F‚Â&ö÷BÂ7G‚“²&WGW&ã·Ğ¢–b‡fæöFU÷gG—R†F—"’ÒdD•"’·fæöFU÷WB†F—"“²&WGW&ã·Ğ¢6†"¦'VffW"Ò”ôÖÆÆö4FFƒƒ“"“°¢6†"¦6†–ÆBÒ”ôÖÆÆö4FF„F–uF‚“°¢–b‚'VffW"ÇÂ6†–ÆB’·fæöFU÷WB†F—"“²–b†'VffW"’”ôg&VTFF†'VffW"Âƒ“"“²–b†6†–ÆB’”ôg&VTFF†6†–ÆBÂF–uF‚“²&WGW&ã·Ğ¢öfe÷Böfg6WBÒ°¢f÷"†–çBVöbÒ²Vöc²’°¢V–õ÷BV–òÒV–õö7&VFRƒÂöfg6WBÂT”õõ5•554RÂT”õõ$TB“°¢–b‚V–ò’'&V³°¢V–õöFF–÷b‡V–òÂ45EõU4U%ôDE%õB†'VffW"’Âƒ“"“°¢–çB6÷VçBÒ°¢W'&÷"Òdäõõ$TDD•"†F—"ÂV–òÂÂfVöbÂf6÷VçBÂ7G‚“°¢6öç7B6—¦U÷Bv÷BÒƒ“"Ò‡6—¦U÷B—V–õ÷&W6–B‡V–ò“°¢öfg6WBÒV–õööfg6WB‡V–ò“°¢V–õög&VR‡V–ò“°¢–b†W'&÷"’¶æ÷FR‚'&VFF—""ÂF‚ÂW'&÷"“²²¶&ö÷EöF–uöW'&÷'3²'&V³·Ğ¢–b‚v÷B’'&V³°¢f÷"‡6—¦U÷BBÒ²B²öfg6WFöb‡7G'V7BF—&VçBÂEöæÖR’ÃÒv÷C²’°¢6öç7B7G'V7BF—&VçB¦BÒ†6öç7B7G'V7BF—&VçB¢’†'VffW"²B“°¢–b‚BÓæE÷&V6ÆVâ’¶VöbÒ²'&V³·Ğ¢B³ÒBÓæE÷&V6ÆVã°¢–b‚BÓæEö–æòÇÂ†BÓæEöæÖÆVâÓÒbbBÓæEöæÖU³ÒÓÒrâr’ÇÂ†BÓæEöæÖÆVâÓÒ"bbBÓæEöæÖU³ÒÓÒrârbbBÓæEöæÖU³ÒÓÒrâr’’6öçF–çVS°¢–b‚‡6—¦U÷B—6ç&–çFb†6†–ÆBÂF–uF‚Â"W2òRâ§2"ÂF‚Â†–çB–BÓæEöæÖÆVâÂBÓæEöæÖR’ãÒF–uF‚’¶æ÷FR‚&Æöær"ÂF‚Â“²6öçF–çVS·Ğ¢–b†BÓæE÷G—RÓÒEEôD•"’°¢–b†FWF‚ÂF–tFWF‚’66â†6†–ÆBÂFWF‚²Â&ö÷BÂ7G‚“°¢6öçF–çVS°¢Ğ¢–b†BÓæE÷G—RÒEEõ$Tr’6öçF–çVS°¢FB†6†–ÆBÂ&ö÷BÂ7G‚“°¢Ğ¢Ğ¢”ôg&VTFF†6†–ÆBÂF–uF‚“°¢”ôg&VTFF†'VffW"Âƒ“"“°¢fæöFU÷WB†F—"“°§Ğ ¢òò&ö÷B÷&FW"f—'7C²–ç6–FR&ö÷BF†RÆFW"æÖRf—'7B†Æörf–ÆW2&RçVÖ&W&VBWv&BÂ6òF†RæWvW7B6öÖW2f—'7B’à§7FF–2–çBv÷'F‚†6öç7Bfö–B¦Â6öç7Bfö–B¦"’°¢6öç7B7G'V7BF–uöf–ÆR§‚ÒÂ§’Ò#°¢–b‡‚Óç&ö÷BÒ’Óç&ö÷B’&WGW&â‚Óç&ö÷BÂ’Óç&ö÷BòÓ¢°¢&WGW&â×7G&6×‡‚ÓçF‚Â’ÓçF‚“°§Ğ ¢òò•2G&6S¢WfW'’ÖW76vR6VçBFò÷'Böb&6¶&ö&FB‡F†R&VæFW"6W'fW"w2&ö6W72’÷"öb7&–æt&ö&B‡v†–6‚vWG2F†RF÷V6‚WfVçG0¢òòg&öÒ&6¶&ö&FB’ÂF†RVW7F–öâ&V–ærv†Bv¶W2F†R&VæFW"F‡&VBæBF†R6Æ–VçB&Vf÷&R6Æ÷rg&ÖRâF†R¶W&æVÂ6ÆÇ0¢òò6†Væuö—5÷6VæEö†öö²‡F†R†çRF6‚’v—F‚F†RFW7F–æF–öâ÷'BÆö6¶VBf÷"F†RÖW76vW2FòF†RGvòG&6VBF6·3²F†—2&V6÷&G2F†RF–ÖRÀ¢òòF†RÖW76vR–BÂF†R6VæFW"w2–BæBF†R&V6V—fW"–â&–ærâ¶W&æVÂæ—2æ&–â—2F†R&–ær–âF–ÖR÷&FW"ƒbÖ'—FR†VFW"$•3""ÂS3"F÷FÂÀ¢òòS3"¶WBÂS3"²F†Vâ·ScBÖ–7&÷6V6öæG2ÂS3"ÖW76vR–BÂS3"&V6V—fW"ÃÂ#BÂ6VæFW"–Bƒ#B&—G2Â¶W&æVÂÂ†fffffbVæ¶æ÷vâ—Ó°¢òò&V6V—fW"&6¶&ö&FBÂ"7&–æt&ö&B’ÂæB¶W&æVÂç&–æw2çG‡BæÖW2F†R–G2âF†R†öö²vöW2–âöæÇ’öæ6RF†R†öÖR67&VVâG&w2ƒS ¢òòfÆ—2’Â6ò—B6ææ÷BF÷V6‚F†R&ö÷Bw27F'GW‡F†Rf—'7B'Vâv—F‚—BÂ“vC“FSSs‚Â7F÷VBBF†RÆövó²F†R6W6R—2æ÷B¶æ÷vâ’à¢òòF÷V6‚&W÷'G3¢¶W&æVÂçF÷V6‚æ&–âÂF†RF–ÖRöbWfW'’&W÷'BF†RF÷V6‚G&—fW"†æFVBFòF†R„”BWfVçBG&—fW"„†–D–çWE&ö&Ræ7’à¦W‡FW&âV–çCcE÷BÖ6…ö'6öÇWFU÷F–ÖR‡fö–B“°¦W‡FW&âfö–B'6öÇWFWF–ÖU÷Fõöææ÷6V6öæG2‡V–çCcE÷BÂV–çCcE÷B¢“°¦W‡FW&âfö–B§6†Væuö—5÷G&6U÷F6²õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âfö–B§6†Væuö—5÷G&6U÷F6³"õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âfö–B‚§6†Væuö—5÷6VæEö†öö²’‡V–çC3%÷BÂfö–B¢ÂV–çC3%÷B’õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&â7G'V7BF6²§&ö5÷F6²‡&ö5÷B“°¦W‡FW&âföÆF–ÆRV–çCcE÷B¦æF—fU÷F÷V6…÷&W÷'E÷&–ærõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fU÷F÷V6…÷&W÷'Eö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒ´—5&–ærÒS#C#ƒ‚ÂF÷V6…&–ærÒcSS3gÓ°¢òòF†R6Æ–VçB6×ÆW"„&ö÷EV•G&6U&ö&Ræ2“¢¶W&æVÂæ6Æ–VçBæ&–â—2—G2&–ær–âF–ÖR÷&FW"ƒbÖ'—FR†VFW"$4Ä“"ÂS3"F÷FÂÂS3"¶WBÂS3"°¢òòF†Vâ#‚Ö'—FR&V6÷&G2·ScBÖ–7&÷6V6öæG2Â“3"–BÂSb7FFRÂ“b&–÷&—G’ÂS3"6öçFW‡B7v—F6†W2Â“3"Ö6…ö×6rVW"–BÂScB5RF–ÖP¢òò†Ö6‚Væ—G2’ÂScBv—BWfVçBÂScBg&ÖW5³Ò‡2ÂÇ"Âæ–æR6ÆÆW'2—Ò“²¶W&æVÂç&–æw2çG‡B†22&÷rW"F&vWB‡–BÂ6†&VB66†P¢òò6Æ–FRÂÖ–â–ÖvRFG&W72ÂæÖR’â&V6÷&BÆ7G2VçF–ÂF†RæW‡BöæRöbF†R6ÖR–B‡Væ6†ævVB&Æö6¶VBF‡&VG2&Ræ÷B&WVFVB’à§7G'V7B75÷&V2·V–çCcE÷B'3²–çC3%÷B–C²V–çCe÷B7FFS²–çCe÷B&“²V–çC3%÷B73²–çC3%÷BVW#²V–çCcE÷B7RÂv—BÂg&ÖW5³Ó·Ó°§7G'V7B75÷F&vWB¶–çB–C²Vç6–væVB6Æ–FS²V–çCcE÷B–ÖvRÂ6VVã²6†"æÖU³3%Ó·Ó°¢òò5Rö67Wæ7’„&ö÷EV•G&6U&ö&Ræ2’Â¶W&æVÂæ7W2æ&–ã¢†VFW"$5S"ÂF÷FÂÂ¶WBÂ²F†VâCÖ'—FR&V6÷&G2·ScBÖ–7&÷6V6öæG2Â“b&–÷&—G¢òòöbv†B'Vç2öâ5RâãrÂS‚–FÆRF‡&VBöâ5Râãrƒ#¢F†R6×ÆW"—G6VÆb’ÂS‚&ö6W76÷"7FFRâãwÒà§7G'V7B75ö7R·V–çCcE÷B'3²–çCe÷B&•³…Ó²V–çC…÷B–FÆU³…ÒÂ7FFU³…Ó·Ó°¦W‡FW&â7G'V7B75ö7R¦&ö÷Eö7U÷&–ærõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷B&ö÷Eö7Uö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒ´7U&–ærÒcSS3gÓ°§7FF–2V–çC3%÷B7Uö¶WBÂ7Uö¶VW°¢òò&ö6W725RF–ÖR„&ö÷EV•G&6U&ö&Ræ2’Â¶W&æVÂçF–ÖRæ&–ã¢†VFW"%DÓ"ÂF÷FÂÂ¶WBÂ²F†Vâ#BÖ'—FR&V6÷&G2·ScBÖ–7&÷6V6öæG2öbF†P¢òò72Â“3"–BÂS3"W6W"Ö–7&÷6V6öæG2ÂS3"7—7FVÒÖ–7&÷6V6öæG26–æ6RF†R–Bw2Æ7B72ƒ×2'B’Â“b&6R&–÷&—G’ÂSbÒà§7G'V7B75÷F–ÖR·V–çCcE÷B'3²–çC3%÷B–C²V–çC3%÷BW6W%÷W2Â7—7FVÕ÷W3²–çCe÷B&–÷&—G“²V–çCe÷B&W6W'fVC·Ó°¦W‡FW&â7G'V7B75÷F–ÖR¦&ö÷E÷F–ÖU÷&–ærõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&â6öç7B6†"¦&ö÷E÷F–ÖUöæÖR†–çB’õöGG&–'WFUõò‚‡vVµö–×÷'B’“²òòF†RæÖRF†R5RF–ÖR726s¢&ö6W72vöæR'’F†RW‡÷'B†2æöæP¦W‡FW&âföÆF–ÆRV–çC3%÷B&ö÷E÷F–ÖUö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒµF–ÖU&–ærÒ3s'Ó°§7FF–2V–çC3%÷BF–ÖUö¶WBÂF–ÖUö¶VW°¢òòW6W"6Æ–VçB6ÆÇ2„†–D–çWE&ö&Ræ7’Â¶W&æVÂæ–ö2æ&–ã¢†VFW"$”ô3"ÂF÷FÂÂ¶WBÂ²F†Vâ3"Ö'—FR&V6÷&G2·ScBÖ–7&÷6V6öæG2VçFW&VBÀ¢òòS3"Ö–7&÷6V6öæG2v—F–ærf÷"F†R6Æ–VçBw2Æö6²ÂS3"Ö–7&÷6V6öæG2–âF†RÖWF†öBÂS3"6VÆV7F÷"Â“3"–BÂScB6Æ72æÖRFG&W77Ó²F†P¢òò6Æ72æÖW2&RF†R²&÷w2öb¶W&æVÂç&–æw2çG‡Bà§7G'V7B–ö5÷&V2·V–çCcE÷BVçFW&VC²V–çC3%÷BÆö6µ÷W2Â6ÆÅ÷W2Â6VÆV7F÷#²–çC3%÷B–C²V–çCcE÷B6Æ75öæÖS·Ó°¦W‡FW&â7G'V7B–ö5÷&V2¦æF—fUö–ö5÷&–ærõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUö–ö5ö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âfö–BæF—fUö–ö5÷G&6U÷7F'B†6öç7B–çB¢ÂVç6–væVB’õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒ´–ö5&–ærÒ#c#CGÓ°§7FF–2V–çC3%÷B–ö5ö¶WBÂ–ö5ö¶VW°¢òòF†RuRG&—fW"w26ÆÇ2„æF—fTG&VæõV&Æ—6‚æ7’Â¶W&æVÂæwV6ÆÇ2æ&–ã¢†VFW"$uS"ÂF÷FÂÂ¶WBÂ²F†Vâ3"Ö'—FR&V6÷&G2·Sc@¢òòÖ–7&÷6V6öæG2VçFW&VBÂS3"Ö–7&÷6V6öæG2–âF†RG&—fW"ÂS3"öbF†÷6Rv—F–ærf÷"F†RFWf–6RÆö6²ÂSb$’ÖWF†öBÂSbÂ“3"–BÂS3 ¢òò7FGW2ÂS3"¶”"öbâÆÆö6F–öçÒà§7G'V7BwUö6ÆÅ÷&V2·V–çCcE÷BVçFW&VC²V–çC3%÷BW2ÂÆö6µ÷W3²V–çCe÷BÖWF†öBÂfÆw3²–çC3%÷B–C²V–çC3%÷B7FGW2Â¶–#·Ó°¦W‡FW&â7G'V7BwUö6ÆÅ÷&V2¦æF—fUöG&Væõö6ÆÅ÷&–ærõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦W‡FW&âföÆF–ÆRV–çC3%÷BæF—fUöG&Væõö6ÆÅö6÷VçBõöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒ´wT6ÆÅ&–ærÒ#c#CGÓ°§7FF–2V–çC3%÷BwV6ÆÅö¶WBÂwV6ÆÅö¶VW°¢òò‡—6–6ÆÇ’6öçF–wV÷W2ÆÆö6F–öç2‡F†R†çR†öö²–â7ÕöÆÆö6FR’Â¶W&æVÂæ6öçF–ræ&–ã¢†VFW"$5Ds"ÂF÷FÂÂ¶WBÂ²F†Vâs"Ö'—FR&V6÷&G0¢òò·ScBÖ–7&÷6V6öæG2&VvâÂS3"Ö–7&÷6V6öæG26V&6†–ærÂS3"vW2Âf÷VæBÃÂ3Â“3"–BÂS3"g&ÖW2ÂScB¶W&æVÂ&WGW&âFG&W76W5³e×Ó°¢òò¶W&æVÂç&–æw2çG‡B†2F†R'Vææ–ærFG&W72öb&ö÷EöF–u÷6†÷E÷F–6²f÷"F†R6Æ–FRà§7G'V7B6öçF–u÷&V2·V–çCcE÷B&Vvã²V–çC3%÷BW2ÂvW3²–çC3%÷B–C²V–çC3%÷B6÷VçC²V–çCcE÷Bg&ÖW5³eÓ·Ó°¦W‡FW&âfö–B‚§6†Væuö6öçF–uö†öö²’‡Vç6–væVB–çBÂ–çBÂV–çCcE÷BÂV–çCcE÷BÂ6öç7BV–çGG%÷B¢ÂVç6–væVB–çB’õöGG&–'WFUõò‚‡vVµö–×÷'B’“°¦VçVÒ´6öçF–u&–ærÒƒ“'Ó°§7FF–27G'V7B6öçF–u÷&V2¦6öçF–u÷&–æs°§7FF–2föÆF–ÆRV–çC3%÷B6öçF–uö6÷VçC°§7FF–2V–çC3%÷B6öçF–uö¶WBÂ6öçF–uö¶VW°§7FF–2fö–B6öçF–uö†öö²‡Vç6–væVB–çBvW2Â–çBf÷VæBÂV–çCcE÷B&VvâÂV–çCcE÷BVæFVBÂ6öç7BV–çGG%÷B¦g&ÖW2ÂVç6–væVB–çB6÷VçB’°¢6öç7BV–çC3%÷BâÒõöFöÖ–5öfWF6…öFB‚f6öçF–uö6÷VçBÂÂõôDôÔ”5õ$TÄ„TB“°¢7G'V7B6öçF–u÷&V2§"Òf6öçF–u÷&–æu¶âb„6öçF–u&–ærÒ•Ó°¢"Óæ&VvâÒ&Vvã²"ÓçW2Ò‡V–çC3%÷B’†VæFVBÒ&Vvâ“²"ÓçvW2ÒvW2Â†f÷VæBòƒƒR¢“²"Óç–BÒ&ö5÷6VÆg–B‚“°¢"Óæ6÷VçBÒ6÷VçC°¢f÷"‡Vç6–væVB’Ò²’Âc²²¶’’"Óæg&ÖW5¶•ÒÒ’Â6÷VçBò‡V–çCcE÷B–g&ÖW5¶•Ò¢°§Ğ¢òòÆ&vRuRÆÆö6F–öç2‡F†RG&—fW"w2&ôÆÆö2†öö²ÂæF—fTG&VæõV&Æ—6‚æ7’Â¶W&æVÂæ&öÆÆö2æ&–ã¢†VFW"$$ô"ÂF÷FÂÂ¶WBÂ²F†Và¢òò#SbÖ'—FR&V6÷&G2·F†RG&—fW"w2SbÖ'—FR†6R&V6÷&B‡ScBÖ–7&÷6V6öæG2VçFW&VC²S3"¶”"ÂfÆw2ÂF†VâÖ–7&÷6V6öæG3¢Æ–Ö—BÆö6²Â7&VFRÀ¢òòv—&RÂ6ÆVâÂÆö6²ÂF—7F6‚ÂF—66&C²S3"7ç2Â“3"7FGW2ÂS3"’Â“3"–BÂS3"ÂF†VâF†R6ÆÆW"w2W6W"7F6³¢ScB6†&VB66†P¢òò6Æ–FRÂScBg&ÖW5³eÒÂGvò–ÖvW2·ScBÖ6‚Ôò†VFW"FG&W72ÂS‚WV–E³e×ÒÂS3"g&ÖR6÷^øã«h‘éì¶»§q«^t| !diag_note) return 0;
+// SPDX-License-Identifier: MIT
+// Diagnostic file export (int-217): the unified log that logd persisted (/private/var/db/diagnostics, with the format strings in
+// /private/var/db/uuidtext) and the crash reports, read by the kernel itself, so neither a sandbox nor a launchd job that never runs
+// (adrenoprobed) stands in the way. BootLog.c asks for the stream once (sheng-diag-export=<seconds>) and writes it into the half of the
+// export region the pipeline-cache blob does not hold; scripts/read-sheng-log.py unpacks it into the run's diag/ directory.
+// Stream: "SHEXR001", u32 stream bytes, u32 0, then the cache export's stream (drivers/AdrenoMetal/CacheExport.h, "M2VCACH1") with root
+// "/" and every path relative to it. The scan lists every file first and spends the budget in the order of worth (the log newest file
+// first, then its format strings, then the crash reports), so an older boot's large log files never push out this boot's. The format
+// strings come last among the log's files because they only change with the binaries: the host keeps those of earlier runs.
+// screen.bgrx is the panel's scanout at half resolution (16-byte header "SHOT", u32 width, height, stride, then BGRX rows), so the
+// run shows what was on the screen. Files that do not fit the budget are named in diag-skipped.txt, the stream's last file.
+#include <sys/param.h>
+#include <sys/systm.h>
+#include <sys/proc.h>
+#include <sys/vnode.h>
+#include <sys/uio.h>
+#include <sys/dirent.h>
+#include <sys/fcntl.h>
+#include <sys/kauth.h>
+#include <IOKit/IOLib.h>
+#include <pexpert/pexpert.h>
+
+enum {DiagMaxFiles = 6144, DiagPath = 192, DiagDepth = 6, DiagChunk = 256 * 1024, DiagNote = 32768};
+struct diag_file {char path[DiagPath]; uint64_t size; uint32_t mode, uid, gid, root, keep;};
+static struct diag_file *diag_files;
+static uint32_t diag_count, diag_skipped_count;
+static char *diag_note;   // diag-skipped.txt
+static size_t diag_note_used;
+volatile uint32_t boot_diag_files, boot_diag_skipped, boot_diag_errors;
+volatile uint32_t boot_diag_alloc;   // the scan's allocations that failed: 1 the file table, 2 the note
+
+// In the order of their worth: the format strings of earlier runs are on the host already, and the crash reports are rarely needed.
+// A root may be a single file: the render server's shader priming state (PrimeShaders.h) in its persistent cache directory, small and
+// the only record of how far priming got (backboardd runs as mobile; the root home is the fallback).
+static const char *const diag_roots[] = {
+  "/private/var/mobile/Library/Caches/com.apple.backboardd/m2v/prime.log",
+  "/private/var/mobile/Library/Caches/com.apple.backboardd/m2v/prime-bad",
+  "/private/var/root/Library/Caches/com.apple.backboardd/m2v/prime.log",
+  "/private/var/root/Library/Caches/com.apple.backboardd/m2v/prime-bad",
+  "/private/var/mobile/Library/Caches/com.apple.backboardd/m2v/shadow.log",
+  "/private/var/root/Library/Caches/com.apple.backboardd/m2v/shadow.log",
+  "/private/var/mobile/Library/Caches/com.apple.backboardd/m2v/frames.trace",
+  "/private/var/root/Library/Caches/com.apple.backboardd/m2v/frames.trace",
+  "/private/var/mobile/Library/Caches/com.apple.backboardd/m2v/cpu.profile",
+  "/private/var/root/Library/Caches/com.apple.backboardd/m2v/cpu.profile",
+  // Safari's built-in data lists (int-269: a nil built-in list URL aborted MobileSafari): what a directory read of the framework
+  // returns next to what a lookup of each file finds. Small, so they go before the log.
+  "/System/Library/PrivateFrameworks/SafariShared.framework/UserAgentQuirks.plist",
+  "/System/Library/PrivateFrameworks/SafariShared.framework/SitesAllowedToAutoplay.plist",
+  "/System/Library/PrivateFrameworks/SafariShared.framework/SitesAllowedToUseAutoplayQuirks.plist",
+  "/System/Library/PrivateFrameworks/SafariShared.framework/WBSOfflineSearchRemoteDisablementDefaultConfig.plist",
+  "/System/Library/PrivateFrameworks/SafariShared.framework/WBSPasswordBreachConfigurationBag.plist",
+  "/System/Library/PrivateFrameworks/SafariCore.framework/WBSAutoFillQuirks.plist",
+  "/System/Library/PrivateFrameworks/SafariCore.framework/WBSPasswordWarningTopFraudTargets.plist",
+  "/System/Library/PrivateFrameworks/SafariShared.framework",
+  "/System/Library/PrivateFrameworks/SafariCore.framework",
+  "/private/var/db/diagnostics",
+  "/private/var/db/uuidtext",
+  "/private/var/mobile/Library/Logs/CrashReporter",
+};
+extern volatile uint64_t native_gop_virtual __attribute__((weak_import));
+extern void native_legacy_direct_snapshot(void) __attribute__((weak_import));   // direct scanout: copies the surface on screen into the boot memory
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+static uint32_t shot_width, shot_height;   // the half-resolution screenshot; 0 when there is no scanout
+// Scene screenshots taken while the run goes (boot_diag_shot_tick): up to DiagShots of the panel at quarter resolution, kept in memory and
+// exported as screen-<seconds of log time>.bgrx, so a scene that is gone by the export is still on file. They are analysed by code only.
+enum {DiagShots = 24};   // every 8 s from 90 s to 274 s at quarter resolution: the scene of each moment of the user's session
+static uint8_t *shot_data[DiagShots];
+static uint32_t shot_time[DiagShots], shot_w, shot_h, shot_taken;
+static const uint32_t shot_at[DiagShots] = {90, 98, 106, 114, 122, 130, 138, 146, 154, 162, 170, 178, 186, 194, 202, 210, 218, 226, 234, 242, 250, 258, 266, 274};
+// The kernel's rings, as text (kernel.rings.txt), formatted at the scan so its length is known and emitted as it was then.
+extern volatile uint64_t (*native_legacy_ring)[2] __attribute__((weak_import));
+extern volatile uint32_t native_legacy_ring_cap __attribute__((weak_import));
+extern volatile uint32_t native_legacy_ring_count __attribute__((weak_import));
+extern volatile uint64_t native_legacy_snap[64][2] __attribute__((weak_import));
+extern volatile uint32_t native_legacy_snap_count __attribute__((weak_import));
+extern volatile uint32_t native_legacy_swapstat[16] __attribute__((weak_import));
+extern volatile uint64_t (*native_adreno_tl)[8] __attribute__((weak_import));
+extern volatile uint32_t native_adreno_switch_log[16][34] __attribute__((weak_import));
+extern volatile uint32_t native_adreno_switch_count __attribute__((weak_import));
+extern volatile uint32_t native_adreno_recover_log[8][12] __attribute__((weak_import));
+extern volatile uint32_t native_adreno_recover_log_count __attribute__((weak_import));
+extern volatile uint32_t native_adreno_prio_log[32][6] __attribute__((weak_import));
+extern volatile uint32_t native_adreno_prio_count __attribute__((weak_import));
+extern volatile uint32_t *native_adreno_pass_log __attribute__((weak_import));
+extern volatile uint32_t native_adreno_pass_count __attribute__((weak_import));
+extern volatile uint32_t *native_adreno_pipe_log __attribute__((weak_import));
+extern volatile uint32_t native_adreno_pipe_count __attribute__((weak_import));
+extern volatile uint32_t native_adreno_tl_cap __attribute__((weak_import));
+extern volatile uint32_t native_adreno_tl_count __attribute__((weak_import));
+extern volatile uint64_t native_adreno_stall_log[32][8] __attribute__((weak_import));
+extern volatile uint32_t native_adreno_stall_log_count __attribute__((weak_import));
+extern volatile uint64_t native_gpu_dcvs_log[256][2] __attribute__((weak_import));
+extern volatile uint32_t native_gpu_dcvs_log_count __attribute__((weak_import));
+extern volatile uint32_t native_gop_wait_ring_count __attribute__((weak_import));
+extern volatile uint64_t native_gop_wait_ring[64][3] __attribute__((weak_import));
+extern volatile uint32_t native_gop_wait_reasons[4] __attribute__((weak_import));
+extern char *PE_boot_args(void);
+extern char boot_log_autoreset_text[200] __attribute__((weak_import));
+enum {DiagRings = 4194304};
+static char *rings_text;
+static size_t rings_len;
+static uint32_t rings_keep, shots_kept, ipc_keep;
+
+static void note(const char *text, const char *path, int error) {
+  if (!diag_note) return;
+  int n = snprintf(diag_note + diag_note_used, DiagNote - diag_note_used, "%s %s %d\n", text, path, error);
+  if (n > 0 && diag_note_used + (size_t)n < DiagNote) diag_note_used += (size_t)n;
+}
+
+static void add(const char *path, uint32_t root, vfs_context_t ctx) {
+  vnode_t file = NULLVP;
+  int error = vnode_lookup(path, 0, &file, ctx);
+  if (error) {note("lookup", path, error); ++boot_diag_errors; return;}
+  struct vnode_attr va;
+  VATTR_INIT(&va);
+  VATTR_WANTED(&va, va_data_size);
+  VATTR_WANTED(&va, va_mode);
+  VATTR_WANTED(&va, va_uid);
+  VATTR_WANTED(&va, va_gid);
+  error = vnode_getattr(file, &va, ctx);
+  vnode_put(file);
+  if (error) {note("getattr", path, error); ++boot_diag_errors; return;}
+  if (diag_count >= DiagMaxFiles) {note("unlisted", path, (int)(va.va_data_size >> 10)); ++diag_skipped_count; return;}
+  struct diag_file *f = &diag_files[diag_count++];
+  strlcpy(f->path, path, sizeof f->path);
+  f->size = va.va_data_size; f->mode = va.va_mode; f->uid = va.va_uid; f->gid = va.va_gid; f->root = root; f->keep = 0;
+}
+
+static void scan(const char *path, unsigned depth, uint32_t root, vfs_context_t ctx) {
+  vnode_t dir = NULLVP;
+  int error = vnode_lookup(path, 0, &dir, ctx);
+  if (error) {note("lookup", path, error); ++boot_diag_errors; return;}
+  if (vnode_vtype(dir) == VREG) {vnode_put(dir); add(path, root, ctx); return;}
+  if (vnode_vtype(dir) != VDIR) {vnode_put(dir); return;}
+  char *buffer = IOMallocData(8192);
+  char *child = IOMallocData(DiagPath);
+  if (!buffer || !child) {vnode_put(dir); if (buffer) IOFreeData(buffer, 8192); if (child) IOFreeData(child, DiagPath); return;}
+  off_t offset = 0;
+  for (int eof = 0; !eof;) {
+    uio_t uio = uio_create(1, offset, UIO_SYSSPACE, UIO_READ);
+    if (!uio) break;
+    uio_addiov(uio, CAST_USER_ADDR_T(buffer), 8192);
+    int count = 0;
+    error = VNOP_READDIR(dir, uio, 0, &eof, &count, ctx);
+    const size_t got = 8192 - (size_t)uio_resid(uio);
+    offset = uio_offset(uio);
+    uio_free(uio);
+    if (error) {note("readdir", path, error); ++boot_diag_errors; break;}
+    if (!got) break;
+    for (size_t at = 0; at + offsetof(struct dirent, d_name) <= got;) {
+      const struct dirent *d = (const struct dirent *)(buffer + at);
+      if (!d->d_reclen) {eof = 1; break;}
+      at += d->d_reclen;
+      if (!d->d_ino || (d->d_namlen == 1 && d->d_name[0] == '.') || (d->d_namlen == 2 && d->d_name[0] == '.' && d->d_name[1] == '.')) continue;
+      if ((size_t)snprintf(child, DiagPath, "%s/%.*s", path, (int)d->d_namlen, d->d_name) >= DiagPath) {note("long", path, 0); continue;}
+      if (d->d_type == DT_DIR) {
+        if (depth < DiagDepth) scan(child, depth + 1, root, ctx);
+        continue;
+      }
+      if (d->d_type != DT_REG) continue;
+      add(child, root, ctx);
+    }
+  }
+  IOFreeData(child, DiagPath);
+  IOFreeData(buffer, 8192);
+  vnode_put(dir);
+}
+
+// Root order first; inside a root the later name first (log files are numbered upward, so the newest comes first).
+static int worth(const void *a, const void *b) {
+  const struct diag_file *x = a, *y = b;
+  if (x->root != y->root) return x->root < y->root ? -1 : 1;
+  return -strcmp(x->path, y->path);
+}
+
+// IPC trace: every message sent to a port of backboardd (the render server's process) or of SpringBoard (which gets the touch events
+// from backboardd), the question being what wakes the render thread and the client before a slow frame. The kernel calls
+// sheng_ipc_send_hook (the xnu patch) with the destination port locked for the messages to the two traced tasks; this records the time,
+// the message id, the sender's pid and the receiver in a ring. kernel.ipc.bin is the ring in time order (16-byte header "IPC2", u32 total,
+// u32 kept, u32 0; then {u64 microseconds, u32 message id, u32 receiver << 24 | sender pid (24 bits, 0 kernel, 0xffffff unknown)};
+// receiver 1 backboardd, 2 SpringBoard), and kernel.rings.txt names the pids. The hook goes in only once the home screen draws (50
+// flips), so it cannot touch the boot's startup (the first run with it, i7d94e5078, stopped at the logo; the cause is not known).
+// Touch reports: kernel.touch.bin, the time of every report the touch driver handed to the HID event driver (HidInputProbe.cpp).
+extern uint64_t mach_absolute_time(void);
+extern void absolutetime_to_nanoseconds(uint64_t, uint64_t *);
+extern void *sheng_ipc_trace_task __attribute__((weak_import));
+extern void *sheng_ipc_trace_task2 __attribute__((weak_import));
+extern void (*sheng_ipc_send_hook)(uint32_t, void *, uint32_t) __attribute__((weak_import));
+extern struct task *proc_task(proc_t);
+extern volatile uint64_t *native_touch_report_ring __attribute__((weak_import));
+extern volatile uint32_t native_touch_report_count __attribute__((weak_import));
+enum {IpcRing = 524288, TouchRing = 65536};
+// The client sampler (BootUiTraceProbe.c): kernel.client.bin is its ring in time order (16-byte header "CLI1", u32 total, u32 kept, u32 0;
+// then 128-byte records {u64 microseconds, i32 pid, u16 state, i16 priority, u32 context switches, i32 mach_msg peer pid, u64 CPU time
+// (mach units), u64 wait event, u64 frames[11] (pc, lr, nine callers)}); kernel.rings.txt has a C row per target (pid, shared cache
+// slide, main image address, name). A record lasts until the next one of the same pid (unchanged blocked threads are not repeated).
+struct cs_rec {uint64_t abs; int32_t pid; uint16_t state; int16_t pri; uint32_t cs; int32_t peer; uint64_t cpu, wait, frames[11];};
+struct cs_target {int pid; unsigned slide; uint64_t image, seen; char name[32];};
+// CPU occupancy (BootUiTraceProbe.c), kernel.cpus.bin: header "CPU1", total, kept, 0; then 40-byte records {u64 microseconds, i16 priority
+// of what runs on CPU 0..7, u8 idle thread on CPU 0..7 (2: the sampler itself), u8 processor state 0..7}.
+struct cs_cpu {uint64_t abs; int16_t pri[8]; uint8_t idle[8], state[8];};
+extern struct cs_cpu *boot_cpu_ring __attribute__((weak_import));
+extern volatile uint32_t boot_cpu_count __attribute__((weak_import));
+enum {CpuRing = 65536};
+static uint32_t cpu_kept, cpu_keep;
+// Process CPU time (BootUiTraceProbe.c), kernel.ptime.bin: header "PTM1", total, kept, 0; then 24-byte records {u64 microseconds of the
+// pass, i32 pid, u32 user microseconds, u32 system microseconds since the pid's last pass (100 ms apart), i16 base priority, u16 0}.
+struct cs_ptime {uint64_t abs; int32_t pid; uint32_t user_us, system_us; int16_t priority; uint16_t reserved;};
+extern struct cs_ptime *boot_ptime_ring __attribute__((weak_import));
+extern const char *boot_ptime_name(int) __attribute__((weak_import));   // the name the CPU time pass saw: a process gone by the export has none
+extern volatile uint32_t boot_ptime_count __attribute__((weak_import));
+enum {PtimeRing = 131072};
+static uint32_t ptime_kept, ptime_keep;
+// User client calls (HidInputProbe.cpp), kernel.ioc.bin: header "IOC1", total, kept, 0; then 32-byte records {u64 microseconds entered,
+// u32 microseconds waiting for the client's lock, u32 microseconds in the method, u32 selector, i32 pid, u64 class name address}; the
+// class names are the K rows of kernel.rings.txt.
+struct ioc_rec {uint64_t entered; uint32_t lock_us, call_us, selector; int32_t pid; uint64_t class_name;};
+extern struct ioc_rec *native_ioc_ring __attribute__((weak_import));
+extern volatile uint32_t native_ioc_count __attribute__((weak_import));
+extern void native_ioc_trace_start(const int *, unsigned) __attribute__((weak_import));
+enum {IocRing = 262144};
+static uint32_t ioc_kept, ioc_keep;
+// The GPU driver's calls (NativeAdrenoPublish.cpp), kernel.gpucalls.bin: header "GPU1", total, kept, 0; then 32-byte records {u64
+// microseconds entered, u32 microseconds in the driver, u32 of those waiting for the device lock, u16 ABI method, u16 0, i32 pid, u32
+// status, u32 KiB of an allocation}.
+struct gpu_call_rec {uint64_t entered; uint32_t us, lock_us; uint16_t method, flags; int32_t pid; uint32_t status, kib;};
+extern struct gpu_call_rec *native_adreno_call_ring __attribute__((weak_import));
+extern volatile uint32_t native_adreno_call_count __attribute__((weak_import));
+enum {GpuCallRing = 262144};
+static uint32_t gpucall_kept, gpucall_keep;
+// Physically contiguous allocations (the xnu hook in cpm_allocate), kernel.contig.bin: header "CTG1", total, kept, 0; then 72-byte records
+// {u64 microseconds began, u32 microseconds searching, u32 pages | found << 31, i32 pid, u32 frames, u64 kernel return addresses[6]};
+// kernel.rings.txt has the running address of boot_diag_shot_tick for the slide.
+struct contig_rec {uint64_t began; uint32_t us, pages; int32_t pid; uint32_t count; uint64_t frames[6];};
+extern void (*sheng_contig_hook)(unsigned int, int, uint64_t, uint64_t, const uintptr_t *, unsigned int) __attribute__((weak_import));
+enum {ContigRing = 8192};
+static struct contig_rec *contig_ring;
+static volatile uint32_t contig_count;
+static uint32_t contig_kept, contig_keep;
+static void contig_hook(unsigned int pages, int found, uint64_t began, uint64_t ended, const uintptr_t *frames, unsigned int count) {
+  const uint32_t n = __atomic_fetch_add(&contig_count, 1, __ATOMIC_RELAXED);
+  struct contig_rec *r = &contig_ring[n & (ContigRing - 1)];
+  r->began = began; r->us = (uint32_t)(ended - began); r->pages = pages | (found ? 0x80000000u : 0); r->pid = proc_selfpid();
+  r->count = count;
+  for (unsigned i = 0; i < 6; ++i) r->frames[i] = i < count ? (uint64_t)frames[i] : 0;
+}
+// Large GPU allocations (the driver's BoAlloc hook, NativeAdrenoPublish.cpp), kernel.boalloc.bin: header "BOA1", total, kept, 0; then
+// 256-byte records {the driver's 56-byte phase record (u64 microseconds entered; u32 KiB, flags, then microseconds: limit lock, create,
+// wire, clean, lock, dispatch, discard; u32 spans, i32 status, u32 0), i32 pid, u32 0, then the caller's user stack: u64 shared cache
+// slide, u64 frames[16], two images {u64 Mach-O header address, u8 uuid[16]}, u32 frame count, u32 walk error}.
+struct bo_trace {uint64_t entered; uint32_t kib, flags, limit_us, create_us, wire_us, clean_us, lock_us, dispatch_us, discard_us, spans;
+  int32_t status; uint32_t reserved;};
+struct boot_user_image {uint64_t base; uint8_t uuid[16];};
+struct boot_user_stack {uint64_t slide, frames[16]; struct boot_user_image images[2]; uint32_t count, error;};
+struct boalloc_rec {struct bo_trace trace; int32_t pid; uint32_t reserved; struct boot_user_stack stack;};
+_Static_assert(sizeof(struct boalloc_rec) == 256, "boalloc record");
+extern void (*native_adreno_bo_hook)(const struct bo_trace *) __attribute__((weak_import));
+extern void boot_user_stack_here(struct boot_user_stack *) __attribute__((weak_import));
+enum {BoAllocRing = 8192};
+static struct boalloc_rec *boalloc_ring;
+static volatile uint32_t boalloc_count;
+static uint32_t boalloc_kept, boalloc_keep;
+static void boalloc_hook(const struct bo_trace *trace) {
+  struct boalloc_rec r;
+  memset(&r, 0, sizeof r);
+  r.trace = *trace; r.pid = proc_selfpid();
+  if (&boot_user_stack_here) boot_user_stack_here(&r.stack);
+  const uint32_t n = __atomic_fetch_add(&boalloc_count, 1, __ATOMIC_RELAXED);
+  boalloc_ring[n & (BoAllocRing - 1)] = r;
+}
+extern void boot_client_sampler_start(void) __attribute__((weak_import));
+extern struct cs_rec *boot_client_ring __attribute__((weak_import));
+extern volatile uint32_t boot_client_count __attribute__((weak_import));
+extern struct cs_target boot_client_targets[32] __attribute__((weak_import));
+extern volatile unsigned boot_client_target_count __attribute__((weak_import));
+enum {ClientRing = 131072};
+static uint32_t client_kept, client_keep;
+struct ipc_rec {uint64_t abs; uint32_t id; uint32_t from;};
+static struct ipc_rec *ipc_ring;
+static volatile uint32_t ipc_count;
+static uint32_t ipc_kept, touch_kept, touch_keep;   // the counts the export measured, so each file has the length it announced
+static int ipc_pid[2];
+static unsigned ipc_scans;
+
+static void ipc_hook(uint32_t id, void *sender_task, uint32_t receiver) {
+  const uint32_t n = __atomic_fetch_add(&ipc_count, 1, __ATOMIC_RELAXED);
+  struct ipc_rec *r = &ipc_ring[n & (IpcRing - 1)];
+  proc_t proc = sender_task ? (proc_t)get_bsdtask_info((task_t)sender_task) : NULL;
+  const uint32_t pid = sender_task ? (proc ? (uint32_t)proc_pid(proc) & 0xffffff : 0xffffff) : 0;
+  r->abs = mach_absolute_time(); r->id = id; r->from = receiver << 24 | pid;
+}
+
+static void *ipc_task_of(const char *want, int *pid_out) {
+  for (int pid = 1; pid < 512; ++pid) {
+    char name[32] = {0};
+    proc_name(pid, name, sizeof name);
+    if (strcmp(name, want)) continue;
+    proc_t proc = proc_find(pid);
+    if (!proc) return NULL;
+    void *task = proc_task(proc);
+    proc_rele(proc);
+    *pid_out = pid;
+    return task;   // only compared, never followed
+  }
+  return NULL;
+}
+
+static void ipc_trace_tick(void) {
+  if (!&native_legacy_swapstat || native_legacy_swapstat[9] < 50) return;   // the home screen draws
+  if (&boot_client_sampler_start) boot_client_sampler_start();
+  // Everything below allocates only now, once the home screen draws: nothing of this trace runs during startup.
+  if (&sheng_contig_hook && !contig_ring) {
+    contig_ring = IOMallocAligned(sizeof(struct contig_rec) * ContigRing, PAGE_SIZE);
+    if (contig_ring) {memset(contig_ring, 0, sizeof(struct contig_rec) * ContigRing); sheng_contig_hook = contig_hook;}
+  }
+  if (&native_adreno_bo_hook && !boalloc_ring) {
+    boalloc_ring = IOMallocAligned(sizeof(struct boalloc_rec) * BoAllocRing, PAGE_SIZE);
+    if (boalloc_ring) {memset(boalloc_ring, 0, sizeof(struct boalloc_rec) * BoAllocRing); native_adreno_bo_hook = boalloc_hook;}
+  }
+  if (&native_adreno_call_ring && !native_adreno_call_ring) {
+    struct gpu_call_rec *calls = IOMallocAligned(sizeof(struct gpu_call_rec) * GpuCallRing, PAGE_SIZE);
+    if (calls) {memset(calls, 0, sizeof(struct gpu_call_rec) * GpuCallRing); native_adreno_call_ring = calls;}
+  }
+  if (&native_touch_report_ring && !native_touch_report_ring) {
+    uint64_t *touches = IOMallocAligned(sizeof(uint64_t) * TouchRing, PAGE_SIZE);
+    if (touches) {memset(touches, 0, sizeof(uint64_t) * TouchRing); native_touch_report_ring = touches;}
+  }
+  if (&native_ioc_trace_start && &boot_client_target_count) {
+    int pids[32]; unsigned n = 0;
+    for (unsigned i = 0; i < boot_client_target_count && i < 32; ++i) pids[n++] = boot_client_targets[i].pid;
+    native_ioc_trace_start(pids, n);
+  }
+  if (!&sheng_ipc_send_hook || !&sheng_ipc_trace_task || !&sheng_ipc_trace_task2) return;
+  if (!ipc_ring) {
+    ipc_ring = IOMallocAligned(sizeof(struct ipc_rec) * IpcRing, PAGE_SIZE);
+    if (!ipc_ring) return;
+    memset(ipc_ring, 0, sizeof(struct ipc_rec) * IpcRing);
+  }
+  if (ipc_pid[0] > 0 && ipc_pid[1] > 0 && (++ipc_scans % 8) != 0) return;   // a restarted process has a new pid and task
+  int pid = 0;
+  void *task = ipc_task_of("backboardd", &pid);
+  if (task) {ipc_pid[0] = pid; if (sheng_ipc_trace_task != task) sheng_ipc_trace_task = task;}
+  task = ipc_task_of("SpringBoard", &pid);
+  if (task) {ipc_pid[1] = pid; if (sheng_ipc_trace_task2 != task) sheng_ipc_trace_task2 = task;}
+  if (ipc_pid[0] > 0 && !sheng_ipc_send_hook) sheng_ipc_send_hook = ipc_hook;
+}
+
+// Called once per log round with the seconds of log time: takes the next scene screenshot when it is due.
+void boot_diag_shot_tick(unsigned now) {
+  ipc_trace_tick();
+  if (shot_taken >= DiagShots || now < shot_at[shot_taken]) return;
+  PE_Video video = {};
+  if (!(&native_gop_virtual && native_gop_virtual && !PE_current_console(&video) && video.v_depth == 32 && video.v_width >= 2 && video.v_height >= 2 &&
+        video.v_width <= 16384 && video.v_height <= 16384 && video.v_rowBytes >= video.v_width * 4)) {++shot_taken; return;}
+  const uint32_t w = (uint32_t)video.v_width / 4, h = (uint32_t)video.v_height / 4;
+  const unsigned n = shot_taken++;
+  shot_data[n] = IOMallocAligned((size_t)w * h * 4, PAGE_SIZE);
+  if (!shot_data[n]) return;
+  if (&native_legacy_direct_snapshot) native_legacy_direct_snapshot();
+  for (uint32_t y = 0; y < h; ++y) {
+    uint32_t *out = (uint32_t *)(shot_data[n] + (size_t)y * w * 4);
+    const uint32_t *in = (const uint32_t *)(uintptr_t)(native_gop_virtual + (uint64_t)y * 4 * video.v_rowBytes);
+    for (uint32_t x = 0; x < w; ++x) out[x] = in[x * 4];
+  }
+  shot_w = w; shot_h = h; shot_time[n] = now;
+}
+
+#define RT(...) do {if (rings_len + 160 < DiagRings) {int n_ = snprintf(rings_text + rings_len, DiagRings - rings_len, __VA_ARGS__); if (n_ > 0) rings_len += (size_t)n_;}} while (0)
+// One text file with every kernel ring of the batch: lines are "<tag> fields", 64-bit microseconds on the uptime clock the render
+// server's traces use (CLOCK_UPTIME_RAW), so rows join by time.
+static void rings_build(void) {
+  if (!rings_text) rings_text = IOMallocAligned(DiagRings, PAGE_SIZE);
+  rings_len = 0;
+  if (!rings_text) return;
+  const char *args = PE_boot_args();
+  const size_t alen = args ? strlen(args) : 0;
+  RT("# boot-args seen by the kernel: length %lu first32 [%.32s] last32 [%s]\n", (unsigned long)alen, args ? args : "", alen > 32 ? args + alen - 32 : (args ? args : ""));
+  RT("# autoreset: %s\n", &boot_log_autoreset_text ? boot_log_autoreset_text : "");
+  if (&native_legacy_ring_count && &native_legacy_ring_cap && native_legacy_ring_cap) {
+    const uint32_t n = native_legacy_ring_count;
+    RT("# swap ring: S <us> <event 1 validated 2 fence wait 3 fence passed 4 flip 5 latch 6 retire 7 copy offer 8 blank> <slot or -1> <validated depth> <fences out> <tag> (total %u)\n", n);
+    const uint32_t cap = native_legacy_ring_cap;
+    for (uint32_t i = n > cap ? n - cap : 0; i < n; ++i) {
+      const uint64_t t = native_legacy_ring[i & (cap - 1)][0], v = native_legacy_ring[i & (cap - 1)][1];
+      RT("S %llu %u %d %u %u %x\n", t, (unsigned)(v >> 56), (int)((v >> 48) & 0xff) - 1, (unsigned)((v >> 40) & 0xff), (unsigned)((v >> 24) & 0xff), (unsigned)(v & 0xffffff));
+    }
+    if (&native_legacy_snap_count && native_legacy_snap_count) {
+      RT("# swap snapshot: the 64 events before the first validation to flip over 100 ms\n");
+      for (unsigned i = 0; i < 64; ++i) {
+        const uint64_t t = native_legacy_snap[i][0], v = native_legacy_snap[i][1];
+        RT("N %llu %u %d %u %u %x\n", t, (unsigned)(v >> 56), (int)((v >> 48) & 0xff) - 1, (unsigned)((v >> 40) & 0xff), (unsigned)((v >> 24) & 0xff), (unsigned)(v & 0xffffff));
+      }
+    }
+    RT("# swap stats: validated %u kicks %u refused(transferred %u not ready %u no head %u latch in flight %u) fence waits %u copy %u blank %u flips %u latches %u retires %u slow(>100ms) %u longest %uus total %uus max depth %u\n",
+       native_legacy_swapstat[0], native_legacy_swapstat[1], native_legacy_swapstat[2], native_legacy_swapstat[3], native_legacy_swapstat[4], native_legacy_swapstat[5],
+       native_legacy_swapstat[6], native_legacy_swapstat[7], native_legacy_swapstat[8], native_legacy_swapstat[9], native_legacy_swapstat[10], native_legacy_swapstat[11],
+       native_legacy_swapstat[12], native_legacy_swapstat[13], native_legacy_swapstat[14], native_legacy_swapstat[15]);
+  }
+  if (&native_adreno_tl_count && &native_adreno_tl_cap && native_adreno_tl_cap) {
+    const uint32_t n = native_adreno_tl_count;
+    RT("# gpu timeline: T <fence> <buffers> <submit us> <cp start ticks> <cp end ticks> (19.2 MHz) <level at submit> <ring status 1 attached 2 stamps 4 page 8 acquired 16 read> <pid> <seen retired us> <ring> <priority+1> <gpu role> <ring the CP ran> <switch in flight> <restarts that replayed it> <replay us> (total %u; raw words, zero when the CP wrote nothing)\n", n);
+    const uint32_t cap = native_adreno_tl_cap;
+    for (uint32_t i = n > cap ? n - cap : 0; i < n; ++i) {
+      const volatile uint64_t *r = native_adreno_tl[i & (cap - 1)];
+      RT("T %u %u %llu %llu %llu %u %u %d %llu %u %u %u %u %u %u %llu\n", (unsigned)(r[0] & 0xffffffffu), (unsigned)((r[0] >> 32) & 0x03ffffffu), r[1], r[2], r[3], (unsigned)(r[4] & 0xffffffffu),
+         (unsigned)(r[0] >> 58), (int)(r[4] >> 32), r[5], (unsigned)(r[6] & 15), (unsigned)((r[6] >> 4) & 15), (unsigned)((r[6] >> 8) & 255),
+         (unsigned)((r[6] >> 16) & 15), (unsigned)((r[6] >> 20) & 15), (unsigned)((r[6] >> 24) & 255), r[7]);
+    }
+  }
+  // The processes' queue priorities and GPU roles as they told the driver (the newest 32), the CP's switches between the two rings (the newest 16)
+  // and the GPU restarts (the newest 8): rows Q, R and V, joined with the T rows by time and pid.
+  if (&native_adreno_prio_count) {
+    const uint32_t n = native_adreno_prio_count;
+    RT("# queue priorities: Q <pid> <foreground> <background> <gpu role then> <ms> <calls before from this connection> (total %u)\n", n);
+    for (uint32_t i = n > 32 ? n - 32 : 0; i < n; ++i) {
+      const volatile uint32_t *r = native_adreno_prio_log[i & 31];
+      RT("Q %u %u %u %u %u %u\n", r[0], r[1], r[2], r[3], r[4], r[5]);
+    }
+  }
+  if (&native_adreno_switch_count) {
+    const uint32_t n = native_adreno_switch_count;
+    RT("# ring switches: R <seq> <trigger us> <end us> <from> <to> <outcome 0 pending 1 done 2 timed out 3 refused> <cntl after trigger> <cntl at end> <rbbm status> <rbbm int status> <cp hw fault> <rb rptr> <rb wptr> | records (rptr wptr errno info) ring0 ring1 before | ring0 ring1 after | cp ib1 base lo hi, ib2 base lo hi, ib1 rem, ib2 rem at a timeout (total %u)\n", n);
+    for (uint32_t i = n > 16 ? n - 16 : 0; i < n; ++i) {
+      const volatile uint32_t *r = native_adreno_switch_log[i & 15];
+      RT("R %u %llu %llu %u %u %u %x %x %x %x %x %x %x | %x %x %x %x %x %x %x %x | %x %x %x %x %x %x %x %x | %x %x %x %x %x %x\n", r[0],
+         (unsigned long long)r[1] | (unsigned long long)r[2] << 32, (unsigned long long)r[3] | (unsigned long long)r[4] << 32, r[5] & 255, (r[5] >> 8) & 255, r[5] >> 16,
+         r[6], r[7], r[8], r[9], r[10], r[11] & 0xffff, r[11] >> 16, r[12], r[13], r[14], r[15], r[16], r[17], r[18], r[19], r[20], r[21], r[22], r[23], r[24], r[25], r[26], r[27],
+         r[28], r[29], r[30], r[31], r[32], r[33]);
+    }
+  }
+  if (&native_adreno_recover_log_count) {
+    const uint32_t n = native_adreno_recover_log_count;
+    RT("# GPU restarts: V <seq> <us> <hung fence> <status> <jobs replayed> <stranded 1 guilty 2> <why the second ring was given up> <ring of the hung job, 9 none> <ring 0 newest fence> <ring 1 newest fence> <ring the CP ran> (total %u)\n", n);
+    for (uint32_t i = n > 8 ? n - 8 : 0; i < n; ++i) {
+      const volatile uint32_t *r = native_adreno_recover_log[i & 7];
+      RT("V %u %llu %u %x %u %u %u %u %u %u %u\n", r[0], (unsigned long long)r[1] | (unsigned long long)r[2] << 32, r[3], r[4], r[5], r[6], r[7], r[8], r[9], r[10], r[11]);
+    }
+  }
+  // What processes noted in the driver (NativeAdrenoMethodNote), the newest 512 of each: G rows are render passes of 3 ms or more on the GPU
+  // from processes with no trace file of their own (the poster extension), L rows the pipelines they made or were refused. The fragment
+  // shader hash (tu_hash32) joins a G row to the L row that made it; times are microseconds on the stack's clock (the kernel's uptime).
+  if (&native_adreno_pass_count && native_adreno_pass_log) {
+    const uint32_t n = native_adreno_pass_count;
+    RT("# process passes: G <pid> <seq> <recorded us> <gpu start us> <gpu us> <w> <h> <mode 0 gmem 1 sysmem 2 sysmem other> <colors> <flags 1 mutable 2 linear 4 unpadded 8 loaded 16 stored 32 fdm> <swap> <draws> <vkformat> <kpx> <fs instrs> <fs tex> <sy> <ss> <waves> <gpr> <samples> <ds> <bandwidth> <verts> <fs hash> (total %u)\n", n);
+    for (uint32_t i = n > 512 ? n - 512 : 0; i < n; ++i) {
+      const volatile uint32_t *r = native_adreno_pass_log + (i & 511) * 32;
+      if (r[0] < 16) continue;
+      RT("G %u %u %llu %llu %u %u %u %u %u %u %u %u %u %u %u %u %u %u %d %d %u %u %u %u %x\n", r[1], r[2], (unsigned long long)r[3] | (unsigned long long)r[4] << 32,
+         (unsigned long long)r[5] | (unsigned long long)r[6] << 32, r[7], r[8] & 0xffff, r[8] >> 16, r[9] & 255, (r[9] >> 8) & 255, (r[9] >> 16) & 255, r[9] >> 24,
+         r[10] & 0xffff, r[10] >> 16, r[11], r[12] & 0xffff, r[12] >> 16, r[13] & 0xffff, r[13] >> 16, (int)(int8_t)(r[14] & 255), (int)(int8_t)((r[14] >> 8) & 255),
+         (r[14] >> 16) & 255, r[14] >> 24, r[15], r[16], r[17]);
+    }
+  }
+  if (&native_adreno_pipe_count && native_adreno_pipe_log) {
+    const uint32_t n = native_adreno_pipe_count;
+    RT("# process pipelines: L <pid> <made 1 | compute 2> <us it took> <when us (low 32 bits)> <vertex hash> <fragment hash> <colour pixel format> <fragment|vertex|why refused> (total %u)\n", n);
+    for (uint32_t i = n > 512 ? n - 512 : 0; i < n; ++i) {
+      const volatile uint32_t *r = native_adreno_pipe_log + (i & 511) * 32;
+      if (r[0] < 30) continue;
+      char text[97];
+      for (unsigned k = 0; k < 96; ++k) {const char c = (char)(r[8 + k / 4] >> (8 * (k & 3))); text[k] = c >= 32 && c < 127 ? c : (c ? '?' : 0);}
+      text[96] = 0;
+      RT("L %u %u %u %u %x %x %u %s\n", r[1], r[2] & 3, r[3], r[4], r[5], r[6], r[7], text);
+    }
+  }
+  if (&native_adreno_stall_log_count) {
+    const uint32_t n = native_adreno_stall_log_count;
+    RT("# gpu stall ring: X <us> <fence> <event 0 ended 1 kick 3 drain 4 snapshot> <timed-out waits> <pending us> <rptr w before, rptr w after (hex)> <client queue> <first handle> <buffers> (total %u)\n", n);
+    for (uint32_t i = n > 32 ? n - 32 : 0; i < n; ++i) {
+      const volatile uint64_t *r = native_adreno_stall_log[i & 31];
+      RT("X %llu %u %u %u %llu %llx %llx %llx %u\n", r[0], (unsigned)r[1], (unsigned)(r[2] & 0xff), (unsigned)(r[2] >> 8), r[3], r[4], r[5], r[6] & 0xffffffffffffull, (unsigned)(r[6] >> 48));
+    }
+  }
+  if (&native_gpu_dcvs_log_count) {
+    const uint32_t n = native_gpu_dcvs_log_count;
+    RT("# gpu dcvs ring: D <us> <from level> <to level> <reason 1 busy 2 need 3 down 4 idle 5 touch 6 wake 7 floor 8 vote failed> <window busy %%> <needed MHz> (total %u)\n", n);
+    for (uint32_t i = n > 256 ? n - 256 : 0; i < n; ++i) {
+      const uint64_t t = native_gpu_dcvs_log[i & 255][0], v = native_gpu_dcvs_log[i & 255][1];
+      RT("D %llu %u %u %u %u %u\n", t, (unsigned)(v >> 56), (unsigned)((v >> 48) & 0xff), (unsigned)((v >> 40) & 0xff), (unsigned)((v >> 32) & 0xff), (unsigned)(v & 0xffffffffu));
+    }
+  }
+  if (&boot_client_target_count && boot_client_target_count) {
+    RT("# client sampler targets: C <pid> <shared cache slide hex> <main image address hex> <name> <first seen us> (samples %u, kernel.client.bin)\n", client_kept);
+    for (unsigned i = 0; i < boot_client_target_count && i < 32; ++i) {
+      uint64_t seen = 0;
+      absolutetime_to_nanoseconds(boot_client_targets[i].seen, &seen);
+      RT("C %d %x %llx %s %llu\n", boot_client_targets[i].pid, boot_client_targets[i].slide, boot_client_targets[i].image, boot_client_targets[i].name, seen / 1000);
+    }
+  }
+  if (ioc_kept) {
+    const uint32_t kept = ioc_kept > IocRing ? IocRing : ioc_kept;
+    RT("# user client calls: %u (kernel.ioc.bin); K <class name address hex> <class>\n", ioc_kept);
+    uint64_t seen[48]; unsigned seen_n = 0;
+    for (uint32_t i = 0; i < kept && seen_n < 48; ++i) {
+      const uint64_t name = native_ioc_ring[(ioc_kept - kept + i) & (IocRing - 1)].class_name;
+      unsigned k = 0;
+      while (k < seen_n && seen[k] != name) ++k;
+      if (k < seen_n || !name) continue;
+      seen[seen_n++] = name;
+      RT("K %llx %.60s\n", name, (const char *)(uintptr_t)name);
+    }
+  }
+  {
+    // Names of every pid in the user client, GPU call and contiguous allocation rings: N <pid> <name>.
+    int seen[512]; unsigned seen_n = 0;   // every process that ran: the CPU time ring names them all
+    #define NOTE_PID(p_) do {const int p__ = (p_); unsigned k_ = 0; while (k_ < seen_n && seen[k_] != p__) ++k_; \
+      if (k_ == seen_n && seen_n < 512 && p__ > 0) {seen[seen_n++] = p__; char nm_[32] = {0}; proc_name(p__, nm_, sizeof nm_); \
+        if (!nm_[0] && &boot_ptime_name && boot_ptime_name(p__)) strlcpy(nm_, boot_ptime_name(p__), sizeof nm_); RT("N %d %s\n", p__, nm_);}} while (0)
+    RT("# pid names (user client, GPU call and contiguous allocation rings): N <pid> <name>; kernel reference boot_diag_shot_tick=%llx\n",
+       (unsigned long long)(uintptr_t)&boot_diag_shot_tick);
+    if (ioc_kept) {const uint32_t kept = ioc_kept > IocRing ? IocRing : ioc_kept; for (uint32_t i = 0; i < kept; ++i) NOTE_PID(native_ioc_ring[(ioc_kept - kept + i) & (IocRing - 1)].pid);}
+    if (gpucall_kept) {const uint32_t kept = gpucall_kept > GpuCallRing ? GpuCallRing : gpucall_kept; for (uint32_t i = 0; i < kept; ++i) NOTE_PID(native_adreno_call_ring[(gpucall_kept - kept + i) & (GpuCallRing - 1)].pid);}
+    if (contig_kept) {const uint32_t kept = contig_kept > ContigRing ? ContigRing : contig_kept; for (uint32_t i = 0; i < kept; ++i) NOTE_PID(contig_ring[(contig_kept - kept + i) & (ContigRing - 1)].pid);}
+    if (boalloc_kept) {const uint32_t kept = boalloc_kept > BoAllocRing ? BoAllocRing : boalloc_kept; for (uint32_t i = 0; i < kept; ++i) NOTE_PID(boalloc_ring[(boalloc_kept - kept + i) & (BoAllocRing - 1)].pid);}
+    if (ptime_kept) {const uint32_t kept = ptime_kept > PtimeRing ? PtimeRing : ptime_kept; for (uint32_t i = 0; i < kept; ++i) NOTE_PID(boot_ptime_ring[(ptime_kept - kept + i) & (PtimeRing - 1)].pid);}
+    if (&native_adreno_pass_count && native_adreno_pass_log) {const uint32_t n = native_adreno_pass_count; for (uint32_t i = n > 512 ? n - 512 : 0; i < n; ++i) NOTE_PID((int)native_adreno_pass_log[(i & 511) * 32 + 1]);}
+    if (&native_adreno_pipe_count && native_adreno_pipe_log) {const uint32_t n = native_adreno_pipe_count; for (uint32_t i = n > 512 ? n - 512 : 0; i < n; ++i) NOTE_PID((int)native_adreno_pipe_log[(i & 511) * 32 + 1]);}
+    #undef NOTE_PID
+  }
+  if (ipc_ring) {
+    const uint32_t n = ipc_kept ? ipc_kept : ipc_count, kept = n > IpcRing ? IpcRing : n;
+    RT("# ipc to backboardd (receiver 1, pid %d) and SpringBoard (receiver 2, pid %d): total %u kept %u (kernel.ipc.bin); P <pid> <name> for every sender in it\n",
+       ipc_pid[0], ipc_pid[1], n, kept);
+    int seen[64]; unsigned seen_n = 0;
+    for (uint32_t i = 0; i < kept && seen_n < 64; ++i) {
+      const uint32_t raw = ipc_ring[(n - kept + i) & (IpcRing - 1)].from & 0xffffff;
+      const int pid = raw == 0xffffff ? -1 : (int)raw;
+      unsigned k = 0;
+      while (k < seen_n && seen[k] != pid) ++k;
+      if (k < seen_n) continue;
+      seen[seen_n++] = pid;
+      char name[32] = {0};
+      if (pid > 0) proc_name(pid, name, sizeof name); else snprintf(name, sizeof name, "kernel");
+      RT("P %d %s\n", pid, name);
+    }
+  }
+  if (&native_gop_wait_ring_count) {
+    const uint32_t n = native_gop_wait_ring_count;
+    RT("# scanout waits that ended without a swap after 100 ms or more (the object waited on is the presenter's swap slot): W <us> <waited ms> <reason 0 deadline 1 interrupted 2 other> <pid> <swap offered> <delivered> <online> <requested ms> (total %u; reasons: deadline %u interrupted %u other %u woken with a swap %u)\n",
+       n, native_gop_wait_reasons[0], native_gop_wait_reasons[1], native_gop_wait_reasons[2], native_gop_wait_reasons[3]);
+    for (uint32_t i = n > 64 ? n - 64 : 0; i < n; ++i) {
+      const volatile uint64_t *r = native_gop_wait_ring[i & 63];
+      RT("W %llu %llu %u %u %u %u %u %u\n", r[0], (r[1] & 0xffffffffffffffull) / 1000000, (unsigned)(r[1] >> 56), (unsigned)(r[2] & 0xffffffffu), (unsigned)((r[2] >> 32) & 1),
+         (unsigned)((r[2] >> 33) & 1), (unsigned)((r[2] >> 34) & 1), (unsigned)(r[2] >> 40));
+    }
+  }
+}
+
+// The stream's length (without the 16-byte blob header) for at most budget bytes, after scanning the roots; 0 when nothing could be read.
+uint64_t boot_diag_scan(uint64_t budget) {
+  // The scan's only zero return is a failed allocation ([diag] status=-8 in i84edf75a1 and, with the table from page memory,
+  // in id02fe1633): both come from page allocations, as the export's staging does (IOMallocAligned, 256 KiB, which works), and
+  // boot_diag_alloc names the one that failed.
+  if (!diag_files) diag_files = IOMallocAligned(sizeof(struct diag_file) * DiagMaxFiles, PAGE_SIZE);
+  if (!diag_note) diag_note = IOMallocAligned(DiagNote, PAGE_SIZE);
+  boot_diag_alloc = (diag_files ? 0 : 1) | (diag_note ? 0 : 2);
+  if (!diag_files || !diag_note) return 0;
   diag_count = diag_skipped_count = 0; diag_note_used = 0; diag_note[0] = 0;
   const char *note_name = "diag-skipped.txt";
   uint64_t used = 8 + 4 + 1 + 4 + 24 + strlen(note_name) + DiagNote;   // head with root "/", the note file at its full size
