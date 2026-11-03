@@ -43,7 +43,12 @@ jobs:
           path: uefi-sheng
           submodules: recursive
       - name: tools
-        run: brew install dtc llvm
+        run: |
+          brew install cmake ninja unifdef llvm lld mtools dtc
+          brew install blacktop/tap/ipsw
+          for tool in cmake ninja unifdef clang ld.lld llvm-nm mformat mcopy dtc ipsw; do
+            command -v "$tool"
+          done
       - name: platform seed
         env:
           seed: ${{ secrets.UNIXNU_UNIQUE_CHIP_ID }}
