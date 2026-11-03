@@ -6,8 +6,11 @@ from pathlib import Path
 import re
 import subprocess
 
-ROOT = Path(__file__).resolve().parents[2]
-pins = json.loads((ROOT / 'docs/adreno-inputs.json').read_text())
+# This helper is invoked from the assembled UniXNU build tree. The device's
+# package sources are symlinked into that tree, so resolving __file__ would
+# incorrectly anchor paths at the source repository.
+ROOT = Path.cwd().resolve()
+pins = json.loads((ROOT / 'scripts/data/adreno-inputs.json').read_text())
 tree = ROOT / '.cache/linux-dts'
 for name, expected in pins['board']['sha256'].items():
     path = tree / name

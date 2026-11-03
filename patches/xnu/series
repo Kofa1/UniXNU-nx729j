@@ -2,3 +2,5 @@
 # In prelinked mode, the XNU script omits the source bootstrap object, so OSKext starts the original kext once.
 prelinked-corecrypto-oskext.patch
 native-stack-shift.patch
+sheng-cpu-idle.patch
+native-pmap-user-mappings.patch

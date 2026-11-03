@@ -31,6 +31,19 @@ archives = [
   "build-sheng-source-storage.py --policy-dir scripts/policies/ipados-27.0.1-24A446",
   "build-nx729j-source-storage-fallbacks.py",
   "component:RamBlock",
+  "component:Adreno740",
+  "fetch-sheng-dts.py",
+  "fetch-adreno-inputs.py",
+  "prepare-sheng-gmu.py",
+  "prepare-sheng-gpu-smmu.py",
+  "prepare-sheng-gmu-votes.py",
+  "build-adreno740-kits.py",
+  "build-adreno740-accelerator.py",
+  "component:AppleKeyStoreState",
+  "component:GopFramebuffer",
+  "build-gop-legacy-display-27.py",
+  "build-fileset-release-reference.py --tree . --lto",
+  "prepare-nx729j-fileset-anchors.py",
 ]
 
 [firmware]
@@ -65,10 +78,14 @@ title = "nx729j iPadOS 27 kernel-entry bring-up"
 # The full 16 GiB physical layout remains in /ddr-regions.
 dram_size = "0x140000000"
 panic_screen = false
-# Keep source storage and native UFS root disabled until this iPadOS 27 kernel
-# has a PMGR integration audited for its own ABI. The available PMGR builder
-# is pinned to the iOS 17 ABI and cannot be reused here.
-kernel_args = ["-v", "serial=3", "debug=0x14e", "kt_fixed_zones=120", "-no_slto_panic", "use_contiguous_hint=0"]
+kernel_args = [
+  "-v", "serial=3", "debug=0x14e", "kt_fixed_zones=120", "-no_slto_panic", "use_contiguous_hint=0",
+  "native-source-storage=1", "native-ufs-root=1",
+    "sheng-aks=1", "offline-hid-input=1", "offline-hid-home=1", "sheng-buttons=1",
+  "sheng-log=1", "sheng-smp=1", "armcpu-spi-ipi=1", "armcpu-self-ipi=1",
+    "sheng-disable-watchdogd=1", "sheng-lite=1",
+]
+skip_setup_tool = "scripts/seed-data-skip-setup.py"
 
 [payload.adt]
 chip_id = "207"
@@ -91,9 +108,27 @@ source = "device:dts/nx729j.dts"
 include_dirs = ["soc:dts"]
 
 [components]
-include = ["ArmDTPlatform", "ArmCpu", "XnuPrelink", "DarwinBoot", "ShengUfs", "RamBlock"]
+include = ["ArmDTPlatform", "ArmCpu", "XnuPrelink", "DarwinBoot", "ShengPreflight", "ShengUfs", "RamBlock", "Adreno740", "AppleKeyStoreState", "GopFramebuffer"]
 [package]
 unixnu = "../UniXNU"
 
 [package.defconfig]
 "ipados-27.0.1-24A446" = "nx729j_ipados27_defconfig"
+
+
+[payload.runtime]
+tool = "scripts/build-boot-runtime.py"
+target = "ios27"
+build = "24A446"
+data_gib = 215
+skip_setup = true
+trust_components = ["StaticTrustCache", "Cryptex1,SystemTrustCache", "Cryptex1,AppTrustCache"]
+wallpapers = ["ipados27", "ipados27-floating"]
+
+[adt.defaults.u32]
+"sleep-disabled" = 1
+"vmm-present" = 1
+"kern.maxvnodes" = 78848
+
+[adt.chosen.u32]
+"kernel-ctrr-to-be-enabled" = 0

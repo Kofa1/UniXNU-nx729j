@@ -1,6 +1,17 @@
 # 适配进度：红魔 8 Pro+ 现在到哪一步了
 
-最后更新：2026-11-01（Intel Mac 本地构建、固件内存图修正与受控启动准备）
+最后更新：2026-11-02（对齐 Sheng iPadOS 27 启动结构）
+
+## 2026-11-02 Sheng 启动结构与当前内核进度
+
+- 设备分支 `codex/ios27-interactive-port` 的最新远端基线为 `e784dfa391c0d4a14ea346ca4bd23e0fd77d3db4`。当前改动在隔离 worktree 中，尚未提交或推送。UniXNU 使用 Sheng iPadOS 27 当前构建链的 `474cfeeb4e35b3fc91ec98cd2bb54e1ab25389b8`；UEFI 仍固定在 `20ac23d5e0937106c2129303dfc931b3390ae660`。
+- 已按 Sheng 的 SM8550 结构完成 NX729J 本地 host 构建：板级 archive、GOP legacy display、AppleKeyStoreState、HID/按键源对象、RELEASE-LTO 文件集参考、XNU 编译/链接及 iPadOS 27.0.1 kernelcache prelink 均通过。Adreno740 与 Sheng storage inputs 使用其现有生成流程；`vmm-present=1` 保留，未加 PMGR 假驱动。
+- 内核文件：`UniXNU-sheng-reference/out/nx729j/ipados-27.0.1-24A446/nx729j_ipados27/kernel/kernel.macho`，96,190,464 字节，SHA-256 `f0a64241b69c7a3908ac2c566f2cebc5786f30aa7aaeafd13b89536c8d1bf726`。prelink 报告 `mapping_complete=true`、`missing={}`，但有 **24 个函数调用仍指向 `_unixnu_fileset_unmapped` 报告桩**；所以 `runtime_qualified=false`、`loadable=false`。这是 host 编译与文件集映射候选，不是已能启动的内核。
+- 按设备仓库现有代码接入 NX729J 的 NativeUfs 与 NativeNovatekTouch；补入 Sheng 通用 HID 驱动。当前没有核实过的 NX729J 触控固件，因此构建时生成 0 长度固件标记，触控保持禁用，未把 Xiaomi Sheng 平板固件塞进手机镜像。source-driver 报告为编译通过、运行期未认证。
+- GitHub Actions 最新已知仍是 run [41387028549](https://github.com/Kofa1/UniXNU-nx729j/actions/runs/41387028549)，它对应上述远端基线并在旧 core pin 的 package 步骤失败；本地改动未推送，因此没有新的 Actions 结果。
+- 尚未生成 payload 或 boot image：本机 shell 没有安全的 `UNIXNU_UNIQUE_CHIP_ID` 环境变量；不会输出或复述 seed。未向手机发送内核，也未写任何分区。iOS 17 回退配置与产物保持原样。
+
+下一步：逐项解决 24 个报告桩调用，移除 `--allow-missing`，再确认 prelink 不再把调用导向桩。之后才能把结果称为可加载候选；再用隐藏输入的设备 seed 打 payload/boot image，并通过 fastboot RAM 启动观察 DarwinBoot/XNU 入口。到达 GUI 仍需运行期 PMGR/平台、root、launchd、显示/Metal 与 PAC 工作；当前没有 iOS 27 真机启动或 PAC 资格证据。
 
 ## 2026-11-01 仓库与打包状态核对
 
