@@ -28,6 +28,7 @@ anchors = {
  ],
  'sites': [
   {'site':'0xfffffe0008153010','native_symbol':'_ml_set_interrupts_enabled_with_debug','evidence':'ApplePMGR __DATA_CONST site 0xfffffe0008153010 is an authenticated pointer to original function 0xfffffe000ad6df18 in the exact 24A446 kernelcache. The target contains the __func__ name ml_set_interrupts_enabled_with_debug, its machine_routines_common.c marker, and the function’s exact debug-exceptions panic text; its instructions read DAIF. The pinned XNU declaration has boolean (enable, debug) arguments and a boolean return. Bind only this ApplePMGR import to the same source API in the native build, preserving the rest of the function map.'},
+  {'site':'0xfffffe0008153008','native_symbol':'_thread_wakeup_thread','evidence':'ApplePMGR __DATA_CONST site 0xfffffe0008153008 is an authenticated pointer to original function 0xfffffe000ad6e204 in the exact 24A446 kernelcache. The function contains the sched_prim.c marker, __func__ name thread_wakeup_thread, and the exact THREAD_NULL panic format from that API. The pinned XNU declaration takes (event_t, thread_t) and returns kern_return_t; the matching native symbol is resolved by name. Bind only this ApplePMGR import; the old body is larger because it inlines the wakeup path.'},
  ]
 }
 changed = False

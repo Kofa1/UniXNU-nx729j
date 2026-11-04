@@ -1,11 +1,8 @@
 name: package
 
-# Manual one-device package run. Artifacts include the NX729J platform seed;
-# download them and delete the run after use.
+# Manually dispatched one-device package run. Artifacts include the NX729J platform seed;
+# download them and delete the run after use. Local development builds run on the Mac.
 on:
-  push:
-    branches:
-      - codex/ios27-interactive-port
   workflow_dispatch:
     inputs:
       os:
