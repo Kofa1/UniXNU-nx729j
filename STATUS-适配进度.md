@@ -2,7 +2,15 @@
 
 最后更新：2026-11-03（本机 Xcode 内核与 prelink 映射推进）
 
-## 2026-11-03 ENTRY-01 待真机测试
+## 2026-11-03 ENTRY-01 真机 SEC 失败；ENTRY-02 修复待测试
+
+- 用户报告 ENTRY-01 停在 Silicium，显示 `Failed to Locate "DXE Heap" Memory Region!`；未到 UniXNU，更未到 XNU。此前 BOOTB-22 或 23 能到 UniXNU。根因已定位为设备 memory-map patch 将 SEC 必须按名寻找的 `DXE Heap` 改成 `DXE Heap 0`。这是本项目的固件回归，不是 kernel / Image4 stub 的运行结果。
+- 只将第一段恢复为 `DXE Heap`，保持 base `0xBAB00000`、size `0x05500000`，ramoops reservation 和第二段 `DXE Heap 1` 原样保留。两个 patch 副本同步修正；新增 firmware preflight `check-nx729j-sec-heap.py`，编译并执行原始 lookup helper 与真实板级 table，已复现旧表失败、验证修正后成功及 alias miss 不覆盖有效结果。修正 patch 可应用到 pinned UEFI `20ac23d5`，结果等于实际 build source。
+- 本地 firmware rebuild 成功（2 分 37 秒）；新 FD SHA-256 `dee0c7ff5ab269343f3b734958087455d3eb1beb6dff4c1c0a7630ca67b6695b`。检查实际 FD 以及最终 Android image 解包后的 SEC descriptor：正确名字/address/size 存在，旧错误 descriptor 不存在。
+- ENTRY-02 为 `100,003,840` 字节，SHA-256 `7f4b703a45d6c11ad6355753b18e8babca174a7ff1bff09c6628872ee92d2e37`。Android container roundtrip 通过；payload、kernel、DTB、BootShim 与 ENTRY-01 相同，只有 firmware 被替换。相同 payload 的菜单标题仍显示 ENTRY-01，以新文件名和 checksum 区分版本。
+- 交付 `/Volumes/1401/NX729J-iPadOS27-ENTRY02`，USB copy 摘要已核对。ENTRY-01 保留为失败证据并标记不要重复。无新增 phone 操作，无 kernel-entry/PAC/UI/GPU 成功声明；ENTRY-02 尚待用户实机测试。
+
+## 2026-11-03 ENTRY-01 构建记录（已失败，由 ENTRY-02 替代）
 
 交付：Mac `out/nx729j-ipados27-entry-01`；已复制到 FAT32 USB `/Volumes/1401/NX729J-iPadOS27-ENTRY01` 并核对镜像摘要。旧 Windows NTFS 卷只读，未写入。
 
