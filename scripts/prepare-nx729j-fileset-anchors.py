@@ -25,19 +25,23 @@ anchors = {
  'data': [
   {'original':'0xfffffe00070446a8','native_symbol':'_PE_arm_debug_panic_hook','addend':0,'evidence':'The AppleARMWatchdogTimer and AppleProcessorTrace GOT sites resolve to this exact original kernelcache slot. The symbol is the exported XNU variable PE_arm_debug_panic_hook (pexpert/arm/hwtrace/hwtrace.c); RELEASE declares a const NULL pointer, while the native DEVELOPMENT build exports the same variable as the debug panic-hook pointer. This maps the imported API identity to the symbol produced by the selected DEVELOPMENT configuration.'},
   {'original':'0xfffffe000b8b3ce8','native_symbol':'_debugger_panic_caller','addend':0,'evidence':'IOHIDFamily imports the original debugger_panic_caller slot. In the exact 24A446 kernelcache, it is at +0x34 from the matched _debugger_current_op global; the following globals match debugger.c declarations (panic string, args, data, options, message, caller). XNU source defines unsigned long debugger_panic_caller in osfmk/kern/debug.c; the native DEVELOPMENT kernel exports that variable at the symbol address. The source-backed identity maps across the differing debugger_op padding.'},
+ ],
+ 'sites': [
+  {'site':'0xfffffe0008153010','native_symbol':'_ml_set_interrupts_enabled_with_debug','evidence':'ApplePMGR __DATA_CONST site 0xfffffe0008153010 is an authenticated pointer to original function 0xfffffe000ad6df18 in the exact 24A446 kernelcache. The target contains the __func__ name ml_set_interrupts_enabled_with_debug, its machine_routines_common.c marker, and the function’s exact debug-exceptions panic text; its instructions read DAIF. The pinned XNU declaration has boolean (enable, debug) arguments and a boolean return. Bind only this ApplePMGR import to the same source API in the native build, preserving the rest of the function map.'},
  ]
 }
 changed = False
 for section, entries in anchors.items():
-    existing = {entry['original']: entry for entry in data.get(section, [])}
+    key_field = 'site' if section == 'sites' else 'original'
+    existing = {entry[key_field]: entry for entry in data.get(section, [])}
     for entry in entries:
-        prior = existing.get(entry['original'])
+        prior = existing.get(entry[key_field])
         if prior is not None and prior != entry:
-            raise SystemExit(f'conflicting {section} anchor for {entry["original"]}')
+            raise SystemExit(f'conflicting {section} anchor for {entry[key_field]}')
         if prior is None:
             data.setdefault(section, []).append(entry)
-            existing[entry['original']] = entry
+            existing[entry[key_field]] = entry
             changed = True
 if changed:
     fixture.write_text(json.dumps(data, indent=2) + '\n')
-print('NX729J 24A446 prelink anchors present' if not changed else 'Applied 4 reviewed NX729J 24A446 prelink anchors')
+print('NX729J 24A446 prelink anchors present' if not changed else 'Applied reviewed NX729J 24A446 prelink anchors')
