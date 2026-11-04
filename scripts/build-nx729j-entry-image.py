@@ -126,8 +126,9 @@ with tempfile.TemporaryDirectory(prefix='nx729j-fat-check-') as td:
             subprocess.run(['mcopy', '-i', fat, '::/'+file.relative_to(stage).as_posix(), dest], check=True, capture_output=True)
             assert sha256_file(dest) == sha256_file(file), 'FAT readback mismatch'
 fd = uefi/'Build/nx729jPkg/DEBUG_CLANGPDB/FV/SILICIUM_UEFI.fd'
-assert sha256_file(fd) == 'dee0c7ff5ab269343f3b734958087455d3eb1beb6dff4c1c0a7630ca67b6695b', 'Unexpected firmware'
+assert sha256_file(fd) == '54eafbac0ffc82aac1260196a75678f58b28a3eab3bbba100e627b57d71be9c0', 'Unexpected firmware'
 subprocess.run(['python3', root/'scripts/check-nx729j-sec-heap.py', '--uefi', uefi, '--fd', fd], check=True)
+subprocess.run(['python3', root/'scripts/check-nx729j-memory-publication.py', '--uefi', uefi, '--fd', fd], check=True)
 image = bootimg.build(ctx, uefi, fd, dtb, fat, out/'nx729j-ipados27-entry-01.img')
 assert image.stat().st_size <= 96*1024*1024, 'Image exceeds saved boot_a size'
 report = dict(stage='kernel-entry diagnostic; no root filesystem or Data seed',

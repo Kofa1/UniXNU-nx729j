@@ -1,0 +1,58 @@
+diff --git a/Silicon/Silicium/SiliciumPkg/Library/MemoryAllocationHelperLib/MemoryAllocationHelper.c b/Silicon/Silicium/SiliciumPkg/Library/MemoryAllocationHelperLib/MemoryAllocationHelper.c
+index 6fe49134..5c065c02 100644
+--- a/Silicon/Silicium/SiliciumPkg/Library/MemoryAllocationHelperLib/MemoryAllocationHelper.c
++++ b/Silicon/Silicium/SiliciumPkg/Library/MemoryAllocationHelperLib/MemoryAllocationHelper.c
+@@ -43,6 +43,7 @@ MapMemoryRegion (
+   EFI_STATUS          Status;
+   EFI_GCD_MEMORY_TYPE MemoryType;
+   UINT64              MemoryAttribute[2];
++  EFI_GCD_MEMORY_SPACE_DESCRIPTOR Space;
+ 
+   // Set Memory Region Details
+   switch (Type) {
+@@ -62,16 +63,41 @@ MapMemoryRegion (
+       return EFI_UNSUPPORTED;
+   }
+ 
++  // Do not publish new system RAM before it is mapped. ArmMmuLib may allocate
++  // a translation table; publishing first lets that allocation land in the
++  // unmapped range and ZeroMem then faults before the mapping can be installed.
++  if (Type == EfiConventionalMemory) {
++    if ((Length == 0) || (Address > MAX_UINT64 - Length)) {
++      return EFI_INVALID_PARAMETER;
++    }
++    Status = gDS->GetMemorySpaceDescriptor (Address, &Space);
++    if (EFI_ERROR (Status)) {
++      return Status;
++    }
++    if ((Space.GcdMemoryType != EfiGcdMemoryTypeNonExistent) ||
++        (Address < Space.BaseAddress) ||
++        (Address - Space.BaseAddress > Space.Length) ||
++        (Length > Space.Length - (Address - Space.BaseAddress))) {
++      return EFI_ACCESS_DENIED;
++    }
++    Status = ArmSetMemoryAttributes (Address, Length, MemoryAttribute[0], 0);
++    if (EFI_ERROR (Status)) {
++      return Status;
++    }
++  }
++
+   // Add new Memory Space
+   Status = gDS->AddMemorySpace (MemoryType, Address, Length, 0xF);
+   if (EFI_ERROR (Status)) {
+     return Status;
+   }
+ 
+-  // Set Memory Attributes
+-  Status = ArmSetMemoryAttributes (Address, Length, MemoryAttribute[0], 0);
+-  if (EFI_ERROR (Status)) {
+-    return Status;
++  // MMIO keeps its existing publication/mapping path.
++  if (Type != EfiConventionalMemory) {
++    Status = ArmSetMemoryAttributes (Address, Length, MemoryAttribute[0], 0);
++    if (EFI_ERROR (Status)) {
++      return Status;
++    }
+   }
+ 
+   // Set Memory Space Attributes

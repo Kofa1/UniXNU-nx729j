@@ -2,7 +2,16 @@
 
 最后更新：2026-11-03（本机 Xcode 内核与 prelink 映射推进）
 
-## 2026-11-03 ENTRY-01 真机 SEC 失败；ENTRY-02 修复待测试
+## 2026-11-03 ENTRY-02 RamManagerDxe abort；ENTRY-03 待测试
+
+- 用户照片显示 ENTRY-02 阶段在 UEFI DXE 的 RamManagerDxe 发生 data abort，尚未到 UniXNU/XNU。ELR `0xC48DC968`、module base `0xC48D9000`、RVA `0x3968`，FAR `0x811FF000`，LR RVA `0x2ADC`，ESR `0x96000046`。从 ENTRY-02 实际 FD 解压出的模块（SHA-256 `5b712f4a578e813b425da0cb420b80e988a95c3cccfbe7b53300b62e4d6ca99d`）在该 RVA 是 ZeroMem 的 `str xzr, [x8]`；caller 位于 UpdateRegionMappingRecursive 分配 page table 后的清零路径。
+- pinned DXE `CoreAddMemorySpace` 立即调用 `CoreAddMemoryDescriptor(EfiConventionalMemory, ...)` 使新 RAM 可分配；原 helper 在 ArmSetMemoryAttributes 前发布内存。ArmMmuLib 分配 page table 时可取到尚未映射的新区间，然后清零触发 translation fault。`check-nx729j-memory-publication.py --baseline` 用 pinned 原函数复现这一顺序；修正后的真实函数通过顺序、失败、占用/短区间、overflow 与 MMIO 不变路径的 sanitizer host checks。
+- 新 board patch `nx729j-map-before-publish.patch` 先验证完整 GCD hole，再映射 system RAM，最后发布；失败不将未映射 RAM 交给 allocator。保留 RAM manager 和所有预留区，不以禁用 driver 绕过错误。patch 已对 pinned UEFI `20ac23d5` 验证应用；已加入 apply script 和 firmware preflight。原 DXE Heap 名字回归检查继续通过。
+- firmware rebuild 成功（1 分 53 秒）。新 FD SHA-256 `54eafbac0ffc82aac1260196a75678f58b28a3eab3bbba100e627b57d71be9c0`；实际压缩 FD 解包后的 RamManagerDxe 与 rebuilt module 字节相同，module SHA-256 `143dd0693c414a5d81eb5cba871125db2d876c08d36e476ef460455e09356f3c`；同一检查拒绝旧失败 FD。
+- ENTRY-03 镜像 `100,003,840` 字节，SHA-256 `360501b119743ee290b9fcb16030f92169c7925811179717efdd2afce8d2f153`。kernel/FAT payload/DTB/BootShim 与 ENTRY-02 字节相同，只有 firmware 更换；仍是 no-root、single-CPU 入口诊断。Android container roundtrip 与 USB copy 摘要通过。交付 `/Volumes/1401/NX729J-iPadOS27-ENTRY03`，payload 菜单仍显示 ENTRY-01。
+- ENTRY-02 保存为失败证据并标记不重复。ENTRY-03 尚未上机；无 kernel-entry、PAC、GUI 或 GPU 成功声明，未执行手机操作，iOS 17 fallback 不变。
+
+## 2026-11-03 ENTRY-01 SEC 修复记录（ENTRY-02 后续在 DXE 失败）
 
 - 用户报告 ENTRY-01 停在 Silicium，显示 `Failed to Locate "DXE Heap" Memory Region!`；未到 UniXNU，更未到 XNU。此前 BOOTB-22 或 23 能到 UniXNU。根因已定位为设备 memory-map patch 将 SEC 必须按名寻找的 `DXE Heap` 改成 `DXE Heap 0`。这是本项目的固件回归，不是 kernel / Image4 stub 的运行结果。
 - 只将第一段恢复为 `DXE Heap`，保持 base `0xBAB00000`、size `0x05500000`，ramoops reservation 和第二段 `DXE Heap 1` 原样保留。两个 patch 副本同步修正；新增 firmware preflight `check-nx729j-sec-heap.py`，编译并执行原始 lookup helper 与真实板级 table，已复现旧表失败、验证修正后成功及 alias miss 不覆盖有效结果。修正 patch 可应用到 pinned UEFI `20ac23d5`，结果等于实际 build source。

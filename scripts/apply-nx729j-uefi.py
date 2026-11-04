@@ -16,6 +16,8 @@ patches = [] if integration_patch is None else [
     (integration_patch, ["Platforms/ZTE/nx729jPkg/nx729j.dsc", "Platforms/ZTE/nx729jPkg/nx729j.fdf"]),
     (integration_patch.with_name("nx729j-memory-map.patch"),
      ["Platforms/ZTE/nx729jPkg/Library/MemoryMapLib/MemoryMapLib.c"]),
+    (integration_patch.with_name("nx729j-map-before-publish.patch"),
+     ["Silicon/Silicium/SiliciumPkg/Library/MemoryAllocationHelperLib/MemoryAllocationHelper.c"]),
 ]
 uefi_value = os.environ.get("UNIXNU_UEFI")
 if not integration_patch:
