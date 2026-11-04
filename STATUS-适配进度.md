@@ -1,17 +1,17 @@
 # 适配进度：红魔 8 Pro+ 现在到哪一步了
 
-最后更新：2026-11-03（继续本机 Xcode 内核与 prelink 工作）
+最后更新：2026-11-03（本机 Xcode 内核与 prelink 映射推进）
 
 ## 2026-11-03 Sheng 启动结构与当前内核进度
 
 - 本轮设备仓库更新基于远端提交 `206c58310507389c36cfc9d5e3a7858163220db4`；分支为 `codex/ios27-interactive-port`。UniXNU 固定在 `474cfeeb4e35b3fc91ec98cd2bb54e1ab25389b8`；UEFI 固定在 `20ac23d5e0937106c2129303dfc931b3390ae660`。
 - 已按 Sheng 的 SM8550 结构完成 NX729J 本地 host 构建：板级 archive、GOP legacy display、AppleKeyStoreState、HID/按键源对象、RELEASE-LTO 文件集参考、XNU 编译/链接及 iPadOS 27.0.1 kernelcache prelink 均通过。Adreno740 与 Sheng storage inputs 使用其现有生成流程；`vmm-present=1` 保留，未加 PMGR 假驱动。
-- 内核文件：`UniXNU-sheng-reference/out/nx729j/ipados-27.0.1-24A446/nx729j_ipados27/kernel/kernel.macho`，96,190,464 字节。XNU 已在 Intel Mac 上通过 Xcode 26.6 本机编译和链接；本轮未改 XNU 源码，所以只重跑较快的 prelink，没有重复全量编译。新增四个 `cpu_number()` 导入槽的站点级映射，依照 pinned XNU 的线程 CPU 号 API 与 DEVELOPMENT 原生 `ml_get_cpu_number_local()` 的硬件 CPU 拓扑查询语义。pinned prelink 回归检查通过，桩调用从 22 降至 **20 项**。当前候选 SHA-256 为 `812f70894c3b1eed39e31c56cd018d066406fe0d6eb40b094000ee1c6d8f1115`。报告仍为 `mapping_complete=true`、`missing={}`，但 20 个调用仍指向 `_unixnu_fileset_unmapped`；所以 `runtime_qualified=false`、`loadable=false`。这不是能启动的内核。
+- 内核文件：`UniXNU-sheng-reference/out/nx729j/ipados-27.0.1-24A446/nx729j_ipados27/kernel/kernel.macho`，96,190,464 字节。XNU 已在 Intel Mac 上通过 Xcode 26.6 本机编译和链接；本轮未改 XNU 源码，只重跑了本机 prelink。沿用四个 `cpu_number()` 导入槽映射，并新增 `ml_get_wake_timebase`、`ml_stack_remaining`、`vm_map_page_size`、`processor_info` 以及 IOPlatform quiesce/active action 的源级映射；另确认 IOService DriverKit `Stop_Invoke` 和 `Start_Invoke` 两个 wrapper。pinned prelink 回归检查通过，owner-target 桩调用从 **20 降至 8**（8 个不同地址），`missing={}`、`mapping_complete=true`。当前候选 SHA-256 为 `dd972ccfd43ae052d8dc240b53ac4d1129edd8f9d3017aacdc92eeafa073fafe`。仍有 AppleARMPlatform 1 项、IOHIDFamily 1 项、IOSurface 1 项、AppleImage4 1 项及 Image4 4 项指向 `_unixnu_fileset_unmapped`，所以 `runtime_qualified=false`、`loadable=false`；它不是可启动内核。两个相邻 OSSerialize `withCapacity` 候选尚未强行映射：其中一个锚点会让 matcher 把同一 native 符号从另一个 target 移走并触发回归，需先区分原始类身份。
 - 按设备仓库现有代码接入 NX729J 的 NativeUfs 与 NativeNovatekTouch；补入 Sheng 通用 HID 驱动。当前没有核实过的 NX729J 触控固件，因此构建时生成 0 长度固件标记，触控保持禁用，未把 Xiaomi Sheng 平板固件塞进手机镜像。source-driver 报告为编译通过、运行期未认证。
 - GitHub Actions run [41583636227](https://github.com/Kofa1/UniXNU-nx729j/actions/runs/41583636227) 在 package 步骤失败；run [41585101552](https://github.com/Kofa1/UniXNU-nx729j/actions/runs/41585101552) 在 tools 步骤失败；run [41756531037](https://github.com/Kofa1/UniXNU-nx729j/actions/runs/41756531037) 的 tools 与 seed 成功、package 失败，镜像上传跳过。已确认步骤级状态，但连接不能读取日志正文，具体 package 错误尚未确认。Mac 本地 Xcode 构建是开发路径；仓库的慢速一设备打包 workflow 现改为仅手动触发，工具安装和人工打包仍可按需使用。不得据此宣称 CI 打包通过。
 - 尚未生成 payload 或 boot image：本机 shell 没有安全的 `UNIXNU_UNIQUE_CHIP_ID` 环境变量；不会输出或复述 seed。未向手机发送内核，也未写任何分区。iOS 17 回退配置与产物保持原样。
 
-下一步：继续按原始 kernelcache 调用槽和 pinned XNU API 逐项核实剩余 20 个报告桩调用；每个映射须通过同一回归护栏，再移除 `--allow-missing`。之后才能把结果称为可加载候选；再用隐藏输入的设备 seed 打 payload/boot image，并通过 fastboot RAM 启动观察 DarwinBoot/XNU 入口。到达 GUI 仍需运行期 PMGR/平台、root、launchd、显示/Metal 与 PAC 工作；当前没有 iOS 27 真机启动或 PAC 资格证据。
+下一步：继续核实剩余 8 个报告桩调用（AppleARMPlatform、IOHIDFamily、IOSurface、AppleImage4、Image4）；每个映射须通过同一回归护栏，再移除 `--allow-missing`。之后才能把结果称为可加载候选；再用隐藏输入的设备 seed 打 payload/boot image，并通过 fastboot RAM 启动观察 DarwinBoot/XNU 入口。到达 GUI 仍需运行期 PMGR/平台、root、launchd、显示/Metal 与 PAC 工作；当前没有 iOS 27 真机启动或 PAC 资格证据。
 
 ## 2026-11-01 仓库与打包状态核对
 
