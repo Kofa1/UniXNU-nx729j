@@ -135,6 +135,24 @@ _start:
 
 def kernel_symbols(kernel):
     """Address -> name for the kernel's symbols, from llvm-nm."""
+    data = kernel.read_bytes()
+    header = kernel_header(data)
+    if header:
+        offset = header + 32
+        for _ in range(struct.unpack_from('<I', data, header + 16)[0]):
+            cmd, size = struct.unpack_from('<II', data, offset)
+            if cmd == 2:
+                symoff, count, stroff, _ = struct.unpack_from('<4I', data, offset + 8)
+                table = {}
+                for index in range(count):
+                    string, kind, _, _, va = struct.unpack_from('<IBBHQ', data, symoff + index * 16)
+                    if kind & 0xe0 or kind & 0x0e != 0x0e:
+                        continue
+                    end = data.index(b'\0', stroff + string)
+                    table.setdefault(va, data[stroff + string:end].decode())
+                return table
+            offset += size
+        raise SystemExit('Fileset kernel has no symbols for diagnostic probes')
     nm = shutil.which('llvm-nm') or '/opt/homebrew/opt/llvm/bin/llvm-nm'
     table = {}
     for line in subprocess.run([nm, '-n', kernel], capture_output=True, text=True, check=True).stdout.splitlines():
@@ -183,6 +201,8 @@ def assemble_c(source, va, workdir, symbols):
     font_dir = Path(os.environ.get('UNIXNU_UEFI') or ROOT / 'uefi-sheng') / 'Silicon/Silicium/SiliciumPkg/Library/FrameBufferSerialPortLib'
     obj, elf, binary = (workdir / name for name in ('panic.o', 'panic.elf', 'panic.bin'))
     definitions = []
+    if '_nx729j_entry_checkpoint' in symbols:
+        definitions.append(f'-DENTRY_CHECKPOINT={symbols["_nx729j_entry_checkpoint"]:#x}UL')
     for macro, name, width in (('MAX_MEM', '_max_mem', 8),
                                ('PAGE_TOTAL', '_vm_page_pages', 4),
                                ('PAGE_FREE', '_vm_page_free_count', 4)):
@@ -249,28 +269,51 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 SEGMENTS = []   # (vmaddr, vmsize, fileoff, filesize) of the kernel being patched
+SECTIONS = []
+
+
+def kernel_header(data):
+    """Select the native member; member file offsets are absolute collection offsets."""
+    if struct.unpack_from('<I', data, 12)[0] != 12:
+        return 0
+    offset = 32
+    for _ in range(struct.unpack_from('<I', data, 16)[0]):
+        cmd, size = struct.unpack_from('<II', data, offset)
+        if cmd == 0x80000035:
+            name = offset + struct.unpack_from('<I', data, offset + 24)[0]
+            if data[name:data.index(b'\0', name)] == b'com.apple.kernel':
+                return struct.unpack_from('<Q', data, offset + 16)[0]
+        offset += size
+    raise SystemExit('Fileset has no com.apple.kernel member')
 
 
 def load_segments(data):
     """Read the Mach-O segment table; the file layout differs between kernel builds."""
-    magic, _, _, _, ncmds = struct.unpack_from('<IiiII', data, 0)
+    header = kernel_header(data)
+    magic, _, _, _, ncmds = struct.unpack_from('<IiiII', data, header)
     if magic != 0xFEEDFACF:
         raise SystemExit('Not a 64-bit Mach-O')
-    offset = 32
+    offset = header + 32
     SEGMENTS.clear()
+    SECTIONS.clear()
     for _ in range(ncmds):
         cmd, size = struct.unpack_from('<II', data, offset)
         if cmd == 0x19:
             _, vmaddr, vmsize, fileoff, filesize = struct.unpack_from('<16sQQQQ', data, offset + 8)
             if filesize:
                 SEGMENTS.append((vmaddr, vmsize, fileoff, filesize))
+            for index in range(struct.unpack_from('<I', data, offset + 64)[0]):
+                section = offset + 72 + index * 80
+                name, segment, address, length = struct.unpack_from('<16s16sQQ', data, section)
+                SECTIONS.append((name.rstrip(b'\0'), segment.rstrip(b'\0'), address, length))
         offset += size
 
 
 def unixthread_pc(data):
     """LC_UNIXTHREAD entry pc (arm64 thread state: flavor, count, x0..x28, fp, lr, sp, pc)."""
-    offset = 32
-    for _ in range(struct.unpack_from('<I', data, 16)[0]):
+    header = kernel_header(data)
+    offset = header + 32
+    for _ in range(struct.unpack_from('<I', data, header + 16)[0]):
         cmd, size = struct.unpack_from('<II', data, offset)
         if cmd == 0x5:
             return struct.unpack_from('<Q', data, offset + 16 + 32 * 8)[0]
@@ -357,6 +400,7 @@ def main():
     parser.add_argument('--reset-before', action='store_true', help='reset at the call site before invoking SYMBOL (requires --reset-after)')
     parser.add_argument('--panic-screen', action='store_true', help='draw panic() messages on the screen')
     parser.add_argument('--no-reset', action='store_true', help='no reset probe at all')
+    parser.add_argument('--milestones', action='store_true', help='record MMU and both platform-call returns in verified writable padding; show at panic')
     parser.add_argument('--occurrence', type=int, default=1, help='which call to SYMBOL (1 = first)')
     parser.add_argument('--in', dest='function', default='_arm_init', help='function that makes the call (default _arm_init)')
     args = parser.parse_args()
@@ -380,6 +424,56 @@ def main():
     # (site, cave stage, symbols the cave is linked with)
     sites = [(ENTRY_VA, 1, {'target': START_FIRST_CPU}),
              (MMU_ENABLE_VA, 2, {'target': MMU_ENABLE_VA + 4})]
+    milestone_panic_cave = None
+    if args.milestones:
+        if not args.no_reset or not args.panic_screen:
+            raise SystemExit('--milestones requires --no-reset --panic-screen')
+        # Reserve a word in a real gap between writable DATA sections, never BSS
+        # or a named object, and code after every native executable section.
+        writable = sorted((v, v+n) for _, s, v, n in SECTIONS if s == b'__DATA' and n)
+        marker = None
+        for (_, end), (begin, _) in zip(writable, writable[1:]):
+            at = (end + 7) & ~7
+            if at + 8 <= begin:
+                try:
+                    off = file_offset(at)
+                    if not any(data[off:off+8]):
+                        marker = at
+                        break
+                except SystemExit:
+                    pass
+        if marker is None:
+            raise SystemExit('No verified writable padding for milestone word')
+        executable_end = max(v+n for _, s, v, n in SECTIONS if s == b'__TEXT_EXEC')
+        cave = (executable_end + 15) & ~15
+        base, _, off, length = next(s for s in SEGMENTS if s[0] <= cave < s[0]+s[3])
+        tail_end = base + length
+        if tail_end-cave < 0xc00 or any(data[file_offset(cave):off+length]):
+            raise SystemExit('Insufficient verified executable padding for milestones and renderer')
+        kernel_names['_nx729j_entry_checkpoint'] = marker
+        # x0 is overwritten by the displaced MOV. No stack or scratch register
+        # is needed at this bootstrap point. Self-address is the MMU marker.
+        source = '.text\n.global _start\n_start:\nldr x0, ={marker}\nstr x0, [x0]\nmov x0, #0x300000\nb target\n.ltorg\n'.format(marker=marker)
+        with tempfile.TemporaryDirectory() as tmp:
+            code = assemble(source, CAVES[3], {'target': AFTER_MMU_VA+4}, Path(tmp))
+        if len(code) > CAVE_SIZE:
+            raise SystemExit('MMU milestone exceeds cave')
+        data[file_offset(CAVES[3]):file_offset(CAVES[3])+len(code)] = code
+        struct.pack_into('<I', data, file_offset(AFTER_MMU_VA), branch(AFTER_MMU_VA, CAVES[3]))
+        platform_calls = [find_call(data, kernel_symbols(args.kernel), '_arm_init', '_PE_init_platform', n) for n in (1, 2)]
+        for occurrence, (call, callee) in enumerate(platform_calls, 1):
+            source = ('.text\n.global _start\n_start:\nstp x29,x30,[sp,#-16]!\nbl callee\n'
+                      f'ldr x16, ={marker}\nmov x17, #{occurrence+1}\nstr x17,[x16]\n'
+                      'dsb sy\nldp x29,x30,[sp],#16\nret\n.ltorg\n')
+            with tempfile.TemporaryDirectory() as tmp:
+                code = assemble(source, cave, {'callee': callee}, Path(tmp))
+            if len(code) > CAVE_SIZE:
+                raise SystemExit('Platform milestone exceeds cave')
+            data[file_offset(cave):file_offset(cave)+len(code)] = code
+            struct.pack_into('<I', data, file_offset(call), 0x94000000 | (branch(call, cave) & 0x3ffffff))
+            cave += CAVE_SIZE
+        milestone_panic_cave = cave
+        PANIC_CAVE_END = tail_end
     if args.no_reset:
         description = 'no reset probe'
     elif args.reset_after:
@@ -402,7 +496,7 @@ def main():
         struct.pack_into('<I', data, file_offset(site), branch(site, CAVES[stage]))
     if args.panic_screen:
         # Right after the last probe cave in use, so the padding is shared as tightly as possible.
-        PANIC_CAVE = max(CAVES[stage] for _, stage, _ in sites) + CAVE_SIZE
+        PANIC_CAVE = milestone_panic_cave or (max(CAVES[stage] for _, stage, _ in sites) + CAVE_SIZE)
         if word(PANIC_VA) in (0, 0xFFFFFFFF) or any(data[file_offset(PANIC_CAVE):file_offset(PANIC_CAVE_END)]):
             raise SystemExit('panic() or the panic screen padding is not as expected')
         with tempfile.TemporaryDirectory() as tmp:

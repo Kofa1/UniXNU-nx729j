@@ -253,6 +253,13 @@ __attribute__((noreturn, used, section(".text.b_main"))) void panic_screen_main 
   }
   format (&g, fmt, args);
   g.log = 0;
+#ifdef ENTRY_CHECKPOINT
+  {
+    u64 checkpoint = *(volatile const u64 *)ENTRY_CHECKPOINT;
+    if (checkpoint == ENTRY_CHECKPOINT) checkpoint = 1;
+    hex (&g, "\nENTRY-STAGE=", checkpoint);
+  }
+#endif
   __asm__ volatile ("dsb sy");
   /* Sample the active CPU translation regime, without changing it. This is
    * panic-time evidence only; it does not establish early mappings or EL0 ABI. */

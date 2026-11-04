@@ -2,6 +2,17 @@
 
 最后更新：2026-11-03（本机 Xcode 内核与 prelink 映射推进）
 
+## 2026-11-03 ENTRY-01 待真机测试
+
+交付：Mac `out/nx729j-ipados27-entry-01`；已复制到 FAT32 USB `/Volumes/1401/NX729J-iPadOS27-ENTRY01` 并核对镜像摘要。旧 Windows NTFS 卷只读，未写入。
+
+- 已构建完整 fileset iPadOS 27.0.1 kernel-entry 诊断镜像 `nx729j-ipados27-entry-01.img`：100,003,840 字节，SHA-256 `c0c21249fe4b95212aa73bb10120be77639ee830e99ea5557daf90145633683d`，低于历史 boot_a 的 96 MiB。前一 Mac 203,812,864 字节包超过此分区，不可用于这条 flashing 路径。标准 stripped XNU 文件保留相同 executable bytes 和符号身份，减少约 4 MiB linkedit；重新 prelink 后基础候选为 91,815,936 字节。
+- `build-nx729j-entry-image.py` 复用 pinned core ADT/FAT/Android packers，输出独立目录。设备 seed 仅从已有私有 payload 的 ADT 在内存中读取；镜像不得提交仓库。93 MiB FAT 加 UEFI/DTB 后满足保存的分区上限，flash 前仍需核对实际 boot_a 大小。
+- `patch-xnu-entry-probe.py` 已支持 fileset native member，并提供 `--milestones`：蓝色入口条、MMU 前洋红条、MMU 后与两次 PE_init_platform 返回的内部阶段字；panic renderer 显示 `ENTRY-STAGE=1/2/3`。所有额外代码与数据位于逐字节确认为空、且不属于任何现有 section 的 padding；不自动重启，便于一轮测试收集后续 panic。panic 屏仍依赖有效 kernel framebuffer mapping。
+- 实际交付 kernel 通过生产 DarwinBoot parser；原 prelink regression policy 通过；补丁后 source POST HMAC 重算；字节差异边界与 FAT 文件读回通过；bootimg 解包比对通过。DarwinBoot README 的 fileset unsupported 说法落后于实际 parser；核对过的 parser 源与所用 FD build tree 相同。
+- 本镜像只请求单核入口诊断，`native-source-storage=0 native-ufs-root=0 sheng-log=0`；无 root filesystem、无 Data seed、不以完整 userland payload 冒充交付物。kernel-entry 后 root-device 失败仍可能是预期结果。4 个 TXM stub 保留；没有新增真机 kernel-entry / PAC / GUI / GPU 资格。
+- 没有执行任何手机命令；用户手动 `fastboot flash boot_a`，再沿用其已验证的 Windows ZTEToolbox EDL stock boot_a 恢复流程。iOS 17 fallback 原样保留。持久 kernel 日志不保证；要求从启动前录到最后屏幕。
+
 ## 2026-11-03 Image4 TXM 调用定位补充
 
 - `scripts/audit-nx729j-image4-txm.py` 对固定 24A446 cache、当前候选摘要、4 个导入槽和实际直接调用点的核验通过；结果见 `docs/reference/image4-txm-audit-24A446.json`。原先把状态类型 0x2b 当作 DER OID 的推测不成立：共同 dispatcher 自带 `TXM [Error]: Image4_V2` 日志，确认这些是 TXM RPC 路径。
