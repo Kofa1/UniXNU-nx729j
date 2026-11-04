@@ -1,0 +1,54 @@
+{
+  "kernelcache_sha256": "38e6d9fa5f789b8228f4617ef4c6d2a3fd8ab564abdc9b62920f1db53fc1780a",
+  "candidate_sha256": "a4dee7b487d9bd97e821e518c1312a0a89b0bb7804301ee402aa6503acd2f6ab",
+  "calls": [
+    {
+      "target": "0xfffffe000b2a1694",
+      "callsite": "0xfffffe000a9e2694",
+      "import_slot": "0xfffffe0008479bd8",
+      "context": "service startup"
+    },
+    {
+      "target": "0xfffffe000b2a170c",
+      "callsite": "0xfffffe000a9e2b6c",
+      "import_slot": "0xfffffe0008479bd0",
+      "context": "user-client operation"
+    },
+    {
+      "target": "0xfffffe000b2a1778",
+      "callsite": "0xfffffe000a9e2dd0",
+      "import_slot": "0xfffffe0008479bc0",
+      "context": "user-client objectLoad"
+    },
+    {
+      "target": "0xfffffe000b2a1798",
+      "callsite": "0xfffffe000a9e2e00",
+      "import_slot": "0xfffffe0008479bc8",
+      "context": "user-client objectLoad"
+    }
+  ],
+  "dispatcher": "0xfffffe000b2a17c8",
+  "dispatcher_strings": [
+    "TXM [Error]: CodeSignature: selector: %u | 0x%02X | 0x%02X | %u\n",
+    "TXM [Error]: Errno: selector: %u | %d\n",
+    "TXM [Error]: Image4_V2: selector: %u | %u\n",
+    "TXM [Error]: TrustCache: selector: %u | 0x%02X | 0x%02X | %u\n",
+    "TXM [Error]: selector: %u | %u\n",
+    "attempted multiple TXM thread associations: %lu | %lu @%s:%d",
+    "invalid number of arguments to TXM: selector: %u | %u @%s:%d",
+    "received excessive return words from TXM: selector: %u | %llu @%s:%d",
+    "received fatal error for a selector from TXM: selector: %u | 0x%0llX @%s:%d",
+    "received fewer than expected return words from TXM: selector: %u | %llu @%s:%d",
+    "received out-of-memory error when adding a free page to TXM @%s:%d"
+  ],
+  "service_personality_removed": true,
+  "resolved": false,
+  "early_kernel_entry_blocker_established": false,
+  "full_userland_requirement": "unqualified; inspect runtime consumers before enabling Image4 service",
+  "limitations": [
+    "Static direct-call audit only; indirect entry and runtime behavior are not qualified.",
+    "Retained library code is distinct from an automatically matched IOService.",
+    "Four imports still lead to the reporting panic stub if reached."
+  ],
+  "hardware_tested": false
+}

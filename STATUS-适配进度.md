@@ -2,6 +2,14 @@
 
 最后更新：2026-11-03（本机 Xcode 内核与 prelink 映射推进）
 
+## 2026-11-03 Image4 TXM 调用定位补充
+
+- `scripts/audit-nx729j-image4-txm.py` 对固定 24A446 cache、当前候选摘要、4 个导入槽和实际直接调用点的核验通过；结果见 `docs/reference/image4-txm-audit-24A446.json`。原先把状态类型 0x2b 当作 DER OID 的推测不成立：共同 dispatcher 自带 `TXM [Error]: Image4_V2` 日志，确认这些是 TXM RPC 路径。
+- 调用点为 Image4 service startup 1 项、user-client operation 1 项及 `Image4UserClient::objectLoad` 2 项（local policy / supplemental root）。它们不是先前误认为的同一个 plain-text allocation caller。当前 Sheng profile 将 `com.apple.security.Image4` 作为代码依赖保留，但 emitter 删除它的 IOKit personality；这与 `com.apple.security.AppleImage4` 是不同模块。
+- 4 个映射仍未解决。当前证据允许把它们作为早期 kernel-entry bring-up 的待观察风险，而非已证明必经的入口阻塞；间接路径与完整 userland 是否依赖这些服务尚未认证。不得以返回成功的占位实现替代 TXM。
+- 更正资格标志的解释：pinned emitter 无条件写入 `runtime_qualified=false`、`loadable=false`；清零 stub 也不会自动把它们变为 true。这些标志不等于已观察到 DarwinBoot 拒绝，但当前候选没有真机加载证据。
+- 下一实机里程碑是 DarwinBoot handoff / XNU entry 与 platform 初始化；随后确认 root mount、launchd 和 framebuffer presentation。GPU 阶段先核实 GMU/HFI、SMMU 映射、fence 和已知图像，再验证 UI/Metal。不能从 stub 数量推算 GUI 日期。当前 iOS 27 没有真机 kernel-entry、UI 或 GPU 完成证据。
+
 ## 2026-11-03 Sheng 启动结构与当前内核进度
 
 - 本轮设备仓库更新基于提交 `a5aab9f76a627c6bb0b126b3cb34db4948081121`；分支为 `codex/ios27-interactive-port`。UniXNU 固定在 `474cfeeb4e35b3fc91ec98cd2bb54e1ab25389b8`；UEFI 固定在 `20ac23d5e0937106c2129303dfc931b3390ae660`。
