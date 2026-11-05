@@ -1,0 +1,5 @@
+# iPadOS 27 source-bootstrap mode keeps the shared corecrypto start-once guard.
+# Legacy prelinked-bootstrap configurations continue to use series.
+native-stack-shift.patch
+sheng-cpu-idle.patch
+native-pmap-user-mappings.patch

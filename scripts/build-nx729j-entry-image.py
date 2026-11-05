@@ -25,7 +25,10 @@ p.add_argument('--candidate-report', type=Path, required=True)
 p.add_argument('--seed-from-payload', type=Path, required=True)
 p.add_argument('--trust-cache', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
+p.add_argument('--revision', type=int, default=1, help='Image filename and firmware menu revision')
 a = p.parse_args()
+assert a.revision > 0
+revision = f'{a.revision:02d}'
 root = Path(__file__).resolve().parents[1]
 core, uefi, out = a.core.resolve(), a.uefi.resolve(), a.output.resolve()
 subprocess.run(['python3', root/'scripts/check-nx729j-sec-heap.py', '--uefi', uefi], check=True)
@@ -109,7 +112,7 @@ dtb = devicetree.compile_hardware(ctx)
 del seed
 shutil.copyfile(a.trust_cache, files/'kernel.macho.trustcache')
 config = ('version = 1\n[boot]\ntimeout = 8\ndefault = "xnu"\n[kits]\nautoload = false\n'
-          '[[entry]]\nid = "xnu"\ntitle = "NX729J iPadOS 27 ENTRY-01 diagnostic - no root"\n'
+          f'[[entry]]\nid = "xnu"\ntitle = "NX729J iPadOS 27 ENTRY-{revision} diagnostic - no root"\n'
           f'type = "xnu"\npath = "Payloads/kernel.macho"\nargs = "{line}"\n'
           '[[entry]]\nid = "tools"\ntitle = "Firmware tools and logs"\ntype = "action"\naction = "tools"\n'
           '[[entry]]\nid = "reset"\ntitle = "Restart"\ntype = "action"\naction = "reset"\n'
@@ -129,7 +132,7 @@ fd = uefi/'Build/nx729jPkg/DEBUG_CLANGPDB/FV/SILICIUM_UEFI.fd'
 assert sha256_file(fd) == '54eafbac0ffc82aac1260196a75678f58b28a3eab3bbba100e627b57d71be9c0', 'Unexpected firmware'
 subprocess.run(['python3', root/'scripts/check-nx729j-sec-heap.py', '--uefi', uefi, '--fd', fd], check=True)
 subprocess.run(['python3', root/'scripts/check-nx729j-memory-publication.py', '--uefi', uefi, '--fd', fd], check=True)
-image = bootimg.build(ctx, uefi, fd, dtb, fat, out/'nx729j-ipados27-entry-01.img')
+image = bootimg.build(ctx, uefi, fd, dtb, fat, out/f'nx729j-ipados27-entry-{revision}.img')
 assert image.stat().st_size <= 96*1024*1024, 'Image exceeds saved boot_a size'
 report = dict(stage='kernel-entry diagnostic; no root filesystem or Data seed',
               image_sha256=sha256_file(image), image_bytes=image.stat().st_size,

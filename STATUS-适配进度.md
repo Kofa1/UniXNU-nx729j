@@ -1,5 +1,11 @@
 # 适配进度：红魔 8 Pro+ 现在到哪一步了
 
+
+## 2026-11-05 ENTRY-03 reached native XNU; crypto start-once fix in progress
+
+- Phone result: UEFI completed, native XNU ran through both PE_init_platform calls (`ENTRY-STAGE=3`), then panicked at `prng_random.c:335`, `!prng_ready`. Kernel entry is achieved; GUI/GPU and root mount are not.
+- iPadOS 27 selects source crypto bootstrap. The legacy device patch removed the shared OSKext start-once guard, allowing the original corecrypto provider to register twice. The 27 board now selects `patches/xnu/series-source`, retaining the shared guard. Legacy prelinked series and iOS 17 artifacts are preserved.
+- ENTRY-04 local incremental kernel rebuild, prelink/regression policy and image assembly passed. Image 100,003,840 bytes; SHA-256 `24618689d69f6f68caa63287bd383b00cef8b3d27acbc043261c342ec105cdf4`. Firmware unchanged from ENTRY-03; menu now identifies ENTRY-04. Delivered to `/Volumes/1401/NX729J-iPadOS27-ENTRY04`. Phone test pending.
 最后更新：2026-11-03（本机 Xcode 内核与 prelink 映射推进）
 
 ## 2026-11-03 ENTRY-02 RamManagerDxe abort；ENTRY-03 待测试
@@ -9,7 +15,7 @@
 - 新 board patch `nx729j-map-before-publish.patch` 先验证完整 GCD hole，再映射 system RAM，最后发布；失败不将未映射 RAM 交给 allocator。保留 RAM manager 和所有预留区，不以禁用 driver 绕过错误。patch 已对 pinned UEFI `20ac23d5` 验证应用；已加入 apply script 和 firmware preflight。原 DXE Heap 名字回归检查继续通过。
 - firmware rebuild 成功（1 分 53 秒）。新 FD SHA-256 `54eafbac0ffc82aac1260196a75678f58b28a3eab3bbba100e627b57d71be9c0`；实际压缩 FD 解包后的 RamManagerDxe 与 rebuilt module 字节相同，module SHA-256 `143dd0693c414a5d81eb5cba871125db2d876c08d36e476ef460455e09356f3c`；同一检查拒绝旧失败 FD。
 - ENTRY-03 镜像 `100,003,840` 字节，SHA-256 `360501b119743ee290b9fcb16030f92169c7925811179717efdd2afce8d2f153`。kernel/FAT payload/DTB/BootShim 与 ENTRY-02 字节相同，只有 firmware 更换；仍是 no-root、single-CPU 入口诊断。Android container roundtrip 与 USB copy 摘要通过。交付 `/Volumes/1401/NX729J-iPadOS27-ENTRY03`，payload 菜单仍显示 ENTRY-01。
-- ENTRY-02 保存为失败证据并标记不重复。ENTRY-03 尚未上机；无 kernel-entry、PAC、GUI 或 GPU 成功声明，未执行手机操作，iOS 17 fallback 不变。
+- ENTRY-02 保存为失败证据并标记不重复。当时 ENTRY-03 尚未上机（2026-11-05 上机结果见上方）；无 PAC、GUI 或 GPU 成功声明，未执行手机操作，iOS 17 fallback 不变。
 
 ## 2026-11-03 ENTRY-01 SEC 修复记录（ENTRY-02 后续在 DXE 失败）
 
