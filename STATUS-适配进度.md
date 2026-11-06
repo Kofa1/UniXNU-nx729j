@@ -1,5 +1,22 @@
 # 适配进度：红魔 8 Pro+ 现在到哪一步了
 
+## 2026-11-06 ENTRY-05 works with Chinese ABL; CPU configuration is next
+
+- Keep the older Chinese ABL: its fastboot button combination is a hard requirement. ENTRY-05 bypasses the separate Android ramdisk handoff by carrying the unchanged ENTRY-04 FAT payload and FD in the compressed kernel bundle. A self-relocating board shim supplies an FDT naming that FAT volume to the existing shared SEC/RamDisk/FAT/UniXNU/DarwinBoot path.
+- Phone test now loads the payload, enters native XNU, and reaches `ENTRY-STAGE=3`, then panics: `CPU configuration in device tree is invalid @AppleARMCPU.cpp:111`. The earlier PRNG panic is no longer the first stop. No GUI/GPU or full PAC qualification is claimed.
+- Image: local `out/nx729j-ipados27-entry-05/nx729j-ipados27-entry-05.img`, 30,277,632 bytes, SHA-256 `fbd1300f8cc8fb1baf7dfe63a626c61957dccdda4343bfd56a0b6cb477d264d2`. Menu still says ENTRY-04 because its FAT is unchanged.
+- Six ARM64 relocation emulator cases passed, including the complete 101,715,968-byte bundle. Cache operations were skipped by the emulator; the actual phone test reached XNU. No ABL modification or assistant flashing.
+- Next: align CPU device-tree properties and driver matching with UniXNU-sheng and UniXNU-sm8550-common. Strictly reuse their architecture and Adreno740 support. Do not invent a parallel stack.
+- User now requires Mac-local images/testing only, no USB copying and no extra READMEs. Existing iOS 17 fallback images remain preserved. See `HANDOFF-2026-11-06.md` for exact resume paths, commands and pending work.
+
+
+## 2026-11-06 ABL replacement blocks payload discovery
+
+- User reports ABL change to enable fastboot buttons; UniXNU now shows `no boot entry found`. Slot a and bootloader mode confirmed; boot_a is 96 MiB. No phone flash performed by assistant.
+- Compared both supplied ABL images: stock has a 2024 EEA embedded build path, replacement a 2023 China NX729J build path. They are different bootloader builds, not a small key patch. Both still contain initrd FDT update code; exact runtime failure remains to isolate. See `docs/reference/abl-compatibility.md`.
+- ENTRY-04 crypto fix remains phone-test pending: current failure occurs before kernel loading. ENTRY-03's earlier kernel-entry result remains valid for its then-working bootloader setup.
+
+
 
 ## 2026-11-05 ENTRY-03 reached native XNU; crypto start-once fix in progress
 
